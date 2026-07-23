@@ -40,12 +40,44 @@ New site: `scalinghuman/website` Pages via Actions.
 3. Wait for DNS/HTTPS green checks.
 4. Verify: `https://scalinghuman.ai/`, `/privacy.html`, `/support.html`, app routes, App Store links.
 
-## Optional: Cloudflare (visits + region)
+## Cloudflare Web Analytics (keep GitHub Pages hosting)
 
-1. Add domain to Cloudflare (free); keep **registration** at Spaceship.
-2. Set Spaceship nameservers to Cloudflare’s.
-3. Import/copy the A/CNAME records above (or CF proxy orange-cloud).
-4. Enable **Web Analytics** for country/region stats.
+Privacy-first visit stats (pages, referrers, countries) **without** moving host
+or changing Spaceship DNS.
+
+### One-time (you + script)
+
+1. Free account: https://dash.cloudflare.com/sign-up  
+2. **Web Analytics** → Add a site → hostname `scalinghuman.ai`  
+3. Use the **JavaScript snippet** setup (not “automatic” DNS).  
+4. Copy the **token** from the snippet (`data-cf-beacon` → `token`).  
+5. On this machine:
+
+```bash
+cd Documents/Startup/Websites/scalinghuman-ai
+./scripts/setup-cf-analytics.sh
+```
+
+That stores the token in:
+
+- **macOS Keychain** (`scalinghuman-cf-web-analytics`)
+- local **`.env`** (gitignored)
+- GitHub Actions secret **`PUBLIC_CF_BEACON_TOKEN`** on `scalinghuman/website`
+
+6. Push (or re-run deploy) so production builds include the beacon:
+
+```bash
+git push origin main
+# or: gh workflow run "Deploy to GitHub Pages" --repo scalinghuman/website
+```
+
+Dashboard: Cloudflare → **Web Analytics** → `scalinghuman.ai`.
+
+### Optional later: Cloudflare DNS (still GitHub origin)
+
+Only if you want CF proxy/CDN in front of Pages. Keep domain **registered** at
+Spaceship; point nameservers to Cloudflare; keep A/CNAME → GitHub. Not required
+for Web Analytics.
 
 ## Local
 

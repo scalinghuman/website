@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import CloudflareAnalytics from "../components/CloudflareAnalytics.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -48,5 +49,6 @@ const pageTitle =
       <slot />
     </main>
     <Footer />
+    <CloudflareAnalytics />
   </body>
 </html>
