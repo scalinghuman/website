@@ -1,0 +1,111 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { appStoreBadge, appsBySlug } from "../../data/site";
+
+const app = appsBySlug.glasshole;
+---
+
+<BaseLayout
+  title="Glasshole AI"
+  description="Glasshole AI is an iPhone app for AI-powered live fact-checking and overlay for spoken conversation."
+  path="/apps/glasshole"
+>
+  <article class="container prose">
+    <header class="page-header">
+      <div class="page-header__brand">
+        {
+          app.icon && (
+            <img
+              class="page-header__icon"
+              src={app.icon}
+              width="72"
+              height="72"
+              alt={app.iconAlt || "Glasshole AI"}
+            />
+          )
+        }
+        <div>
+          <p class="page-header__kicker">iPhone · App Store</p>
+          <h1 class="page-header__title">Glasshole AI</h1>
+        </div>
+      </div>
+      <p class="page-header__lead">
+        Glasshole AI is an iPhone app with optional wearable companion support.
+        It also works standalone on iPhone.
+      </p>
+      {
+        app.appStoreUrl && (
+          <p class="page-header__actions">
+            <a
+              class="store-badge-link"
+              href={app.appStoreUrl}
+              rel="noopener noreferrer"
+              aria-label={`Glasshole AI — ${appStoreBadge.alt}`}
+            >
+              <img
+                src={appStoreBadge.src}
+                width={appStoreBadge.width}
+                height={appStoreBadge.height}
+                alt={appStoreBadge.alt}
+              />
+            </a>
+          </p>
+        )
+      }
+    </header>
+
+    <p>
+      The app acts as an AI-powered live or real-time fact-checker and overlay
+      for spoken conversation. It can transcribe spoken conversation, summarize
+      it, and surface concise factual analysis on iPhone and on the companion
+      display.
+    </p>
+
+    <h2>Supported Modes and Models</h2>
+    <ul>
+      <li>Apple Intelligence on compatible iPhones</li>
+      <li>xAI Grok</li>
+      <li>OpenAI</li>
+      <li>Anthropic Claude</li>
+      <li>Google Gemini</li>
+      <li>Ollama</li>
+      <li>PocketPal</li>
+      <li>Custom OpenAI-compatible endpoints</li>
+    </ul>
+
+    <h2>Consent and Recording</h2>
+    <p>
+      Glasshole records audio only when a user starts a session. Use it only with
+      the consent of everyone being recorded and in compliance with local laws
+      and regulations where it is used.
+    </p>
+    <p>
+      Audio recordings are not saved. On-device speech recognition converts audio
+      to text, and session history is stored locally on device. If the user
+      selects an external AI provider, only the transcript needed for the request
+      is sent to that provider.
+    </p>
+
+    <h2>Optional Wearable Companion</h2>
+    <p>
+      The optional wearable companion lets the user trigger sessions from the
+      wearable hardware and view returned results on the companion display. The
+      companion connects to the iPhone app over local Wi-Fi or iPhone Personal
+      Hotspot.
+    </p>
+
+    <h2>Notes</h2>
+    <ul>
+      <li>AI-generated summaries and fact-check results can be wrong.</li>
+      <li>
+        Results should be treated as assistive output, not authoritative truth.
+      </li>
+    </ul>
+
+    <div class="links-row">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/support.html">Support</a>
+      <a href="/">Home</a>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Open Substrate">
+  <!-- Open layered foundation / shared base -->
+  <g stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Bottom plate (open gap on right) -->
+    <path d="M10 46h32c3 0 5-2 5-5v-2"/>
+    <path d="M10 46v-3c0-2 1.5-3.5 3.5-3.5H38"/>
+    <!-- Middle plate -->
+    <path d="M14 34h28c2.5 0 4.5-2 4.5-4.5V27"/>
+    <path d="M14 34v-2.5c0-1.8 1.4-3.2 3.2-3.2H36"/>
+    <!-- Top plate -->
+    <path d="M18 22h24c2 0 3.5-1.6 3.5-3.5V16"/>
+    <path d="M18 22v-2c0-1.5 1.2-2.7 2.7-2.7H34"/>
+  </g>
+  <!-- Open aperture / community node -->
+  <circle cx="48" cy="20" r="5" fill="none" stroke="currentColor" stroke-width="2.6"/>
+  <circle cx="48" cy="20" r="1.8" fill="currentColor"/>
+</svg>

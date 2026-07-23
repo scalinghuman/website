@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Conscious Matter">
+  <!-- Matter body + quiet awareness core (restrained, not mystical) -->
+  <g stroke="currentColor" stroke-width="2.6" stroke-linecap="round" fill="none">
+    <!-- Outer matter form -->
+    <circle cx="32" cy="32" r="20"/>
+    <!-- Inner awareness ring -->
+    <circle cx="32" cy="32" r="11"/>
+  </g>
+  <!-- Soft core spark -->
+  <circle cx="32" cy="32" r="3.2" fill="currentColor"/>
+  <!-- Subtle matter facets (not loud) -->
+  <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.55">
+    <path d="M32 12v6"/>
+    <path d="M32 46v6"/>
+    <path d="M12 32h6"/>
+    <path d="M46 32h6"/>
+  </g>
+</svg>

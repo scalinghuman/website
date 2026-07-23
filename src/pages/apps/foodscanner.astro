@@ -1,0 +1,100 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { appStoreBadge, appsBySlug } from "../../data/site";
+
+const app = appsBySlug.foodscanner;
+---
+
+<BaseLayout
+  title="Food Scanner"
+  description="Food Scanner is an iPhone app with optional wearable companion support. AI-assisted nutrition overlays from food photos."
+  path="/apps/foodscanner"
+>
+  <article class="container prose">
+    <header class="page-header">
+      <div class="page-header__brand">
+        {
+          app.icon && (
+            <img
+              class="page-header__icon"
+              src={app.icon}
+              width="72"
+              height="72"
+              alt={app.iconAlt || "Food Scanner"}
+            />
+          )
+        }
+        <div>
+          <p class="page-header__kicker">iPhone · App Store</p>
+          <h1 class="page-header__title">Food Scanner</h1>
+        </div>
+      </div>
+      <p class="page-header__lead">
+        Food Scanner is an iPhone app with optional wearable companion support.
+        It also works standalone on iPhone.
+      </p>
+      {
+        app.appStoreUrl && (
+          <p class="page-header__actions">
+            <a
+              class="store-badge-link"
+              href={app.appStoreUrl}
+              rel="noopener noreferrer"
+              aria-label={`Food Scanner — ${appStoreBadge.alt}`}
+            >
+              <img
+                src={appStoreBadge.src}
+                width={appStoreBadge.width}
+                height={appStoreBadge.height}
+                alt={appStoreBadge.alt}
+              />
+            </a>
+          </p>
+        )
+      }
+    </header>
+
+    <p>
+      The app turns a food photo into an AI-assisted nutrition overlay with
+      estimated calories, macros, and concise pros and cons. Users can capture
+      from the iPhone camera, choose a photo from the library, or send an image
+      from the optional wearable companion.
+    </p>
+
+    <h2>Supported Modes and Models</h2>
+    <ul>
+      <li>Local iPhone Vision (default, on device)</li>
+      <li>xAI Grok</li>
+      <li>OpenAI</li>
+      <li>Anthropic Claude</li>
+      <li>Google Gemini / Gemma</li>
+      <li>Ollama vision models</li>
+      <li>PocketPal</li>
+      <li>Custom OpenAI-compatible endpoints</li>
+    </ul>
+
+    <h2>Optional Wearable Companion</h2>
+    <p>
+      The optional wearable companion captures a food image and sends it to the
+      iPhone app over local Wi-Fi or iPhone Personal Hotspot. Analysis runs on
+      iPhone, and results are displayed back on the companion display.
+    </p>
+
+    <h2>Notes</h2>
+    <ul>
+      <li>
+        Nutrition values are AI estimates for general information only.
+      </li>
+      <li>
+        The app is not medical advice and should not be used for diagnosis or
+        treatment.
+      </li>
+    </ul>
+
+    <div class="links-row">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/support.html">Support</a>
+      <a href="/">Home</a>
+    </div>
+  </article>
+</BaseLayout>

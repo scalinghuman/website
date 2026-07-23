@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ExperimentCard from "../components/ExperimentCard.astro";
+import Tagline from "../components/Tagline.astro";
+import { experiments, person, tagline } from "../data/site";
+---
+
+<BaseLayout
+  title="Scaling Human"
+  description={`${tagline}. Free hardware and AI tools under the Scaling Human name — open experiments and apps, free to use.`}
+  path="/"
+>
+  <section class="hero container">
+    <img
+      class="hero__logo"
+      src="/assets/logos/scalinghuman.svg"
+      width="72"
+      height="72"
+      alt="Scaling Human"
+    />
+    <p class="hero__eyebrow">Hardware + AI</p>
+    <h1 class="hero__title">Scaling Human</h1>
+    <p class="hero__tagline">
+      <Tagline />
+    </p>
+    <p class="hero__lead">
+      Free tools and open experiments that explore how machines can extend human
+      perception, memory, judgment, and capability. Apps and notes are shared as
+      they become useful — everything on this site is free to use.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="#projects">See projects</a>
+      <a
+        class="btn btn--secondary"
+        href={person.github}
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
+    </div>
+  </section>
+
+  <section
+    class="section container"
+    id="projects"
+    aria-labelledby="projects-heading"
+  >
+    <!-- #work kept for older in-page links -->
+    <div class="section__header" id="work">
+      <span id="experiments" class="sr-only"></span>
+      <h2 id="projects-heading">Public projects</h2>
+      <p>
+        Free tools and apps available today. Support and privacy pages for App
+        Store listings live on this site.
+      </p>
+    </div>
+
+    <div class="card-grid card-grid--3">
+      {
+        experiments.map((item) => (
+          <ExperimentCard
+            title={item.title}
+            kicker={item.kicker}
+            description={item.description}
+            href={item.href}
+            cta={item.cta}
+            appStoreUrl={item.appStoreUrl}
+            appStoreLabel={item.appStoreLabel}
+            icon={item.icon}
+            iconAlt={item.iconAlt}
+          />
+        ))
+      }
+    </div>
+
+    <p class="section__note">
+      More free tools and experiments will appear here as they become ready. No
+      waitlists — useful projects go public when they can help someone.
+    </p>
+  </section>
+
+  {/* Products section reserved until work authorization / intentional launch. */}
+</BaseLayout>

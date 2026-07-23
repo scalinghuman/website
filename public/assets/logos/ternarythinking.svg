@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Ternary Thinking">
+  <!-- Three balanced states: - / 0 / + arranged as triangle -->
+  <g fill="currentColor">
+    <!-- Top: zero (neutral ring) -->
+    <circle cx="32" cy="16" r="7" fill="none" stroke="currentColor" stroke-width="2.8"/>
+    <circle cx="32" cy="16" r="2" />
+    <!-- Bottom left: negative (bar) -->
+    <circle cx="16" cy="46" r="7" fill="none" stroke="currentColor" stroke-width="2.8"/>
+    <rect x="11.5" y="44.6" width="9" height="2.8" rx="1.4"/>
+    <!-- Bottom right: positive (plus) -->
+    <circle cx="48" cy="46" r="7" fill="none" stroke="currentColor" stroke-width="2.8"/>
+    <rect x="43.5" y="44.6" width="9" height="2.8" rx="1.4"/>
+    <rect x="46.6" y="41.5" width="2.8" height="9" rx="1.4"/>
+  </g>
+  <!-- Connecting ternary lattice -->
+  <g stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.85">
+    <path d="M27 21 L19 40"/>
+    <path d="M37 21 L45 40"/>
+    <path d="M23 46 H41"/>
+  </g>
+</svg>

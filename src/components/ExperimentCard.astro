@@ -1,0 +1,72 @@
+---
+import { appStoreBadge } from "../data/site";
+
+interface Props {
+  title: string;
+  kicker?: string;
+  description: string;
+  href: string;
+  cta?: string;
+  appStoreUrl?: string;
+  appStoreLabel?: string;
+  icon?: string;
+  iconAlt?: string;
+}
+
+const {
+  title,
+  kicker = "Public project",
+  description,
+  href,
+  cta = "Details",
+  appStoreUrl,
+  icon,
+  iconAlt = "",
+} = Astro.props;
+---
+
+<article class="card card--static">
+  <div class="card__top">
+    {
+      icon && (
+        <img
+          class="card__icon"
+          src={icon}
+          width="56"
+          height="56"
+          alt={iconAlt || ""}
+          loading="lazy"
+        />
+      )
+    }
+    <div class="card__top-text">
+      <p class="card__kicker">{kicker}</p>
+      <h3 class="card__title">
+        <a class="card__title-link" href={href}>{title}</a>
+      </h3>
+    </div>
+  </div>
+  <p class="card__body">{description}</p>
+  <div class="card__actions">
+    {
+      appStoreUrl && (
+        <a
+          class="card__store"
+          href={appStoreUrl}
+          rel="noopener noreferrer"
+          aria-label={`${title} — ${appStoreBadge.alt}`}
+        >
+          <img
+            class="card__store-badge"
+            src={appStoreBadge.src}
+            width={appStoreBadge.width}
+            height={appStoreBadge.height}
+            alt={appStoreBadge.alt}
+            loading="lazy"
+          />
+        </a>
+      )
+    }
+    <a class="card__cta" href={href}>{cta} →</a>
+  </div>
+</article>

@@ -1,0 +1,92 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Support"
+  description="Support for Food Scanner, Glasshole, and companion apps from Scaling Human."
+  path="/support.html"
+>
+  <article class="container prose">
+    <header class="page-header">
+      <p class="page-header__kicker">Help</p>
+      <h1 class="page-header__title">Support</h1>
+      <p class="page-header__lead">
+        For help with Food Scanner, Glasshole, or the companion apps, contact the
+        channels below.
+      </p>
+    </header>
+
+    <p class="updated">Last updated: July 8, 2026</p>
+
+    <ul>
+      <li>
+        Email:
+        <a href="mailto:srikantha.ballani@gmail.com"
+          >srikantha.ballani@gmail.com</a
+        >
+      </li>
+      <li>
+        GitHub:
+        <a
+          href="https://github.com/scalinghuman/experiments"
+          rel="noopener noreferrer"
+          >https://github.com/scalinghuman/experiments</a
+        >
+      </li>
+    </ul>
+
+    <h2>Compatibility</h2>
+    <p>
+      The iOS apps are iPhone apps and require iOS 26.0 or later.
+    </p>
+    <p>
+      Glasshole supports Apple Intelligence on compatible iPhone models. Other
+      supported iPhones can use configured cloud, local-network, PocketPal, or
+      custom providers. Food Scanner’s default Local iPhone Vision mode works on
+      supported iPhones without an API key.
+    </p>
+
+    <h2>Food Scanner</h2>
+    <p>
+      Food Scanner can be used without companion hardware by choosing a food
+      photo from iPhone or taking a new iPhone camera photo. The optional
+      companion APK can capture a food image and send it to the iOS app over
+      local Wi-Fi or iPhone Personal Hotspot.
+    </p>
+    <p>
+      Nutrition values are AI estimates for general information only, not medical
+      advice.
+    </p>
+
+    <h2>Glasshole</h2>
+    <p>
+      Glasshole can be used without companion hardware by tapping the microphone
+      button in the iOS app. The optional companion APK can start and stop
+      real-time conversation capture and display AI-powered fact-check overlays
+      after analysis.
+    </p>
+    <p>
+      Use Glasshole only with the consent of everyone being recorded and in
+      compliance with local laws and regulations where you use it.
+    </p>
+
+    <h2>Common Setup</h2>
+    <ol>
+      <li>Install the iOS app from the App Store.</li>
+      <li>Install the companion APK from GitHub.</li>
+      <li>Connect the companion hardware to your iPhone Personal Hotspot.</li>
+      <li>Open the iOS app and confirm the connection indicator.</li>
+    </ol>
+    <p>
+      Companion setup may require ADB and manual voice-command registration.
+    </p>
+
+    <div class="links-row">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/apps/foodscanner">Food Scanner</a>
+      <a href="/apps/glasshole">Glasshole AI</a>
+      <a href="/">Home</a>
+    </div>
+  </article>
+</BaseLayout>

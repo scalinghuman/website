@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { person } from "../data/site";
+
+const rows = [
+  {
+    label: "Email",
+    href: `mailto:${person.email}`,
+    value: person.email,
+    external: false,
+  },
+  {
+    label: "GitHub",
+    href: person.github,
+    value: person.githubLabel,
+    external: true,
+  },
+  {
+    label: "LinkedIn",
+    href: person.linkedin,
+    value: "linkedin.com/in/srikanthab",
+    external: true,
+  },
+  {
+    label: "X",
+    href: person.x,
+    value: person.xLabel,
+    external: true,
+  },
+] as const;
+---
+
+<BaseLayout
+  title="Contact"
+  description={`Contact ${person.name} for support on free Scaling Human apps, or a general note.`}
+  path="/contact.html"
+>
+  <article class="container">
+    <header class="page-header">
+      <p class="page-header__kicker">Get in touch</p>
+      <h1 class="page-header__title">Contact</h1>
+      <p class="page-header__lead">
+        Questions about the free apps, or a note for {person.name}.
+      </p>
+    </header>
+
+    <div class="person-card person-card--page">
+      <div class="person-card__top">
+        <img
+          class="person-card__avatar"
+          src="/assets/logos/scalinghuman.svg"
+          width="48"
+          height="48"
+          alt=""
+        />
+        <div class="person-card__identity">
+          <p class="person-card__name">{person.name}</p>
+          <p class="person-card__role">Scaling Human</p>
+        </div>
+      </div>
+
+      <dl class="contact-dl">
+        {
+          rows.map((row) => (
+            <div class="contact-dl__row">
+              <dt class="contact-dl__label">{row.label}</dt>
+              <dd class="contact-dl__value">
+                <a
+                  href={row.href}
+                  rel={row.external ? "noopener noreferrer" : undefined}
+                >
+                  {row.value}
+                </a>
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+
+    <section class="contact-aside" aria-labelledby="app-support-heading">
+      <h2 id="app-support-heading">App support</h2>
+      <p>
+        For Food Scanner, Glasshole, and companion setup, use the support page.
+        For privacy questions, see the privacy policy.
+      </p>
+      <div class="links-row">
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/">Home</a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

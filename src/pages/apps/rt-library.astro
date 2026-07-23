@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<!--
+  RT Library is a co-op building utility — not a Scaling Human experiment.
+  Page kept for App Store / direct links; not featured on the homepage.
+-->
+<BaseLayout
+  title="RT Library"
+  description="RT Library is a co-op shareholder-built catalog for the shared library room at Riviera Towers West New York."
+  path="/apps/rt-library"
+>
+  <article class="container prose">
+    <header class="page-header">
+      <p class="page-header__kicker">Co-op utility</p>
+      <h1 class="page-header__title">RT Library</h1>
+      <p class="page-header__lead">
+        RT Library is a simple co-op shareholder-built catalog for the shared
+        library room at Riviera Towers West New York, a private co-op building.
+      </p>
+    </header>
+
+    <p>
+      The app helps co-op shareholders search and browse the building library by
+      title, author, and genre without physically scanning every shelf.
+    </p>
+
+    <h2>Current Release</h2>
+    <ul>
+      <li>iOS app for iPhone and iPad</li>
+      <li>Search by title, author, or genre</li>
+      <li>Browse books by genre</li>
+      <li>
+        View book details, OCR confidence, source photo, and public metadata
+        links when available
+      </li>
+      <li>
+        Catalog generated from recent library shelf photos using OCR and
+        metadata lookup
+      </li>
+      <li>653 OCR-derived book candidates across 50 genres in version 1.0</li>
+    </ul>
+
+    <h2>Coming Soon</h2>
+    <ul>
+      <li>Co-op shareholder book request submissions</li>
+      <li>Shared availability updates</li>
+      <li>Book donation photo flow</li>
+      <li>Improved metadata matching and catalog cleanup</li>
+    </ul>
+    <p>
+      Requests and availability updates are intentionally marked Coming soon in
+      version 1.0 because shared storage for co-op shareholders is planned for a
+      later release.
+    </p>
+
+    <h2>Notes</h2>
+    <p>
+      The catalog is generated from photos and OCR, not manually entered one book
+      at a time. The total includes verified and unverified book candidates, so
+      some titles may contain OCR mistakes or need co-op shareholder review.
+    </p>
+
+    <div class="links-row">
+      <a href="/apps/rt-library/privacy">Privacy Policy</a>
+      <a href="/apps/rt-library/support">Support</a>
+      <a href="/">Home</a>
+    </div>
+  </article>
+</BaseLayout>

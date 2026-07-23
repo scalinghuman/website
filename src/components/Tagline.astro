@@ -1,0 +1,26 @@
+---
+import { tagline, taglineAccessible } from "../data/site";
+
+interface Props {
+  /** Extra class on the wrapper (e.g. hero__tagline, site-footer__tagline) */
+  class?: string;
+  /** Quieter matrix effect for footer */
+  subtle?: boolean;
+}
+
+const { class: className = "", subtle = false } = Astro.props;
+const classes = ["tagline", subtle && "tagline--subtle", className]
+  .filter(Boolean)
+  .join(" ");
+---
+
+<span class={classes} title={taglineAccessible}>
+  <span class="sr-only">{taglineAccessible}. Tagline: {tagline}</span>
+  <span class="tagline__visual" aria-hidden="true">
+    Humans + Machines{" "}
+    <span class="tagline__op tagline__op--shift">&gt;&gt;</span>
+    {" "}Humans{" "}
+    <span class="tagline__op tagline__op--pipe">|</span>
+    {" "}Machines
+  </span>
+</span>

@@ -1,0 +1,44 @@
+---
+import { person } from "../data/site";
+import Tagline from "./Tagline.astro";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__row">
+      <p class="site-footer__meta site-footer__tagline">
+        <Tagline subtle />
+        <span aria-hidden="true"> · </span>
+        Free tools and open experiments.
+      </p>
+      <ul class="site-footer__links">
+        <li><a href="/privacy.html">Privacy</a></li>
+        <li><a href="/support.html">Support</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li>
+          <a href={person.github} rel="noopener noreferrer">GitHub</a>
+        </li>
+        <li>
+          <a href={person.linkedin} rel="noopener noreferrer">LinkedIn</a>
+        </li>
+        <li>
+          <a href={person.x} rel="noopener noreferrer">X</a>
+        </li>
+        <li>
+          <a href={`mailto:${person.email}`}>Email</a>
+        </li>
+      </ul>
+    </div>
+    <div class="site-footer__row">
+      <p class="site-footer__meta">
+        © {year} {person.name} · Scaling Human
+      </p>
+      <!-- RT Library is a co-op utility, not a featured experiment — quiet link only -->
+      <p class="site-footer__quiet">
+        Other: <a href="/apps/rt-library">RT Library</a>
+      </p>
+    </div>
+  </div>
+</footer>

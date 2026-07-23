@@ -1,0 +1,114 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="Privacy Policy for Food Scanner and Glasshole iOS apps from Scaling Human."
+  path="/privacy.html"
+>
+  <article class="container prose">
+    <header class="page-header">
+      <p class="page-header__kicker">Legal</p>
+      <h1 class="page-header__title">Privacy Policy</h1>
+      <p class="page-header__lead">
+        This policy covers the free Food Scanner and Glasshole iOS apps published
+        under the Scaling Human name. Those apps explore tools that extend human
+        perception and capability.
+      </p>
+    </header>
+
+    <p class="updated">Last updated: July 8, 2026</p>
+
+    <h2>Summary</h2>
+    <p>
+      We do not sell personal data. We do not use advertising trackers. The apps
+      do not require an account.
+    </p>
+    <p>
+      Food Scanner’s default Local iPhone Vision mode runs on device. Glasshole
+      supports Apple Intelligence on compatible devices and runs on device when
+      that provider is selected. If you choose a third-party, local-network, or
+      custom AI provider, the app sends the content needed for your request to
+      that provider using the endpoint and API key you configure.
+    </p>
+
+    <h2>Food Scanner</h2>
+    <p>
+      Food Scanner analyzes food images and generates estimated nutrition
+      overlays. Scan history is stored locally on your device. If you choose
+      Save to Photos, the app saves the generated result image to your photo
+      library.
+    </p>
+    <p>
+      When Local iPhone Vision is selected, food images are classified on device
+      and quick nutrition estimates are generated on device from those labels.
+      When a third-party, local-network, or custom provider is selected, food
+      images are sent to that provider for analysis.
+    </p>
+    <p>
+      Nutrition values are AI estimates for general information only and are not
+      medical advice.
+    </p>
+
+    <h2>Glasshole</h2>
+    <p>
+      Glasshole records audio only when you start a session. On-device speech
+      recognition converts that audio into text for summarization and
+      fact-checking. Audio recordings are not saved. Session history is stored
+      locally on your device.
+    </p>
+    <p>
+      Use the app only with the consent of everyone being recorded and in
+      compliance with local laws and regulations where you use it.
+    </p>
+    <p>
+      When Apple Intelligence is selected on a compatible device, processing runs
+      on device. When a third-party, local-network, or custom provider is
+      selected, transcripts are sent to that provider for summarization and
+      fact-checking.
+    </p>
+    <p>
+      AI fact-check results can be wrong and should not be treated as
+      authoritative.
+    </p>
+
+    <h2>Optional Companion Apps</h2>
+    <p>
+      Optional companion apps are distributed from GitHub. They connect to the
+      iOS apps over your local Wi-Fi or iPhone Personal Hotspot. The Food Scanner
+      companion can send food images to the iOS app. The Glasshole companion
+      sends activation and stop gestures and displays results from the iOS app.
+    </p>
+
+    <h2>API Keys</h2>
+    <p>
+      If you configure a third-party AI provider, API keys are stored in the iOS
+      Keychain on your device.
+    </p>
+
+    <h2>Contact</h2>
+    <p>For privacy questions or support, contact:</p>
+    <ul>
+      <li>
+        Email:
+        <a href="mailto:srikantha.ballani@gmail.com"
+          >srikantha.ballani@gmail.com</a
+        >
+      </li>
+      <li>
+        GitHub:
+        <a
+          href="https://github.com/scalinghuman/experiments"
+          rel="noopener noreferrer"
+          >https://github.com/scalinghuman/experiments</a
+        >
+      </li>
+    </ul>
+
+    <div class="links-row">
+      <a href="/support.html">Support</a>
+      <a href="/">Home</a>
+    </div>
+  </article>
+</BaseLayout>
