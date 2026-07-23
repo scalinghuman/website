@@ -322,7 +322,7 @@ code {
 }
 
 .hero__artwork {
-  width: min(100%, 42rem);
+  width: min(100%, 32rem);
   height: auto;
   margin: 0 auto 2rem;
   border-radius: var(--radius);
