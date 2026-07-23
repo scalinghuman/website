@@ -225,15 +225,6 @@ code {
   flex-shrink: 0;
 }
 
-/* External SVG-as-img is black; flip for dark surfaces */
-@media (prefers-color-scheme: dark) {
-  .brand__logo,
-  .hero__logo,
-  .person-card__avatar {
-    filter: invert(1);
-  }
-}
-
 .brand__wordmark {
   white-space: nowrap;
 }
