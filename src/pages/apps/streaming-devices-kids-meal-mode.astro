@@ -105,6 +105,45 @@ const app = appsBySlug["streaming-devices-kids-meal-mode"];
       is fine — the experiment is useful as a private family tool first.
     </p>
 
+
+    <h2>Install on Fire TV (sideload)</h2>
+    <p>
+      Requires an Android-based Fire TV / Fire OS device. Not on the Amazon
+      Appstore yet. Full steps and build-from-source instructions:
+      <a
+        href="https://github.com/scalinghuman/streaming-devices-kids-meal-mode#install-on-fire-tv-sideload"
+        rel="noopener noreferrer"
+        >private README — Install on Fire TV</a
+      >.
+    </p>
+    <h3>Ready-made APK (private repo access)</h3>
+    <ol>
+      <li>
+        Download
+        <a
+          href="https://github.com/scalinghuman/streaming-devices-kids-meal-mode/blob/main/dist/KidsMealMode-firetv-debug.apk"
+          rel="noopener noreferrer"
+          ><code>KidsMealMode-firetv-debug.apk</code></a
+        >
+        from the private implementation repository.
+      </li>
+      <li>
+        On Fire TV: <strong>Settings → My Fire TV → Developer options</strong> —
+        enable <strong>ADB debugging</strong>.
+      </li>
+      <li>Note the TV IP under <strong>About → Network</strong>.</li>
+      <li>
+        From a computer with <code>adb</code>:
+        <pre><code>adb connect &lt;fire-tv-ip&gt;:5555
+adb install -r KidsMealMode-firetv-debug.apk</code></pre>
+      </li>
+      <li>
+        Open <strong>Kids Meal Mode</strong> and grant
+        <strong>Display over other apps</strong>.
+      </li>
+    </ol>
+    <p>Default parent PIN: <code>1234</code> (change in Settings after PIN entry).</p>
+
     <h2>Streaming App Compatibility</h2>
     <p>
       Kids Meal Mode uses standard Android media key events
@@ -232,33 +271,52 @@ const app = appsBySlug["streaming-devices-kids-meal-mode"];
       </table>
     </div>
 
-    <h2>Private Implementation</h2>
+    <h2>Links &amp; private implementation</h2>
     <p>
       Source code, current APK builds, implementation notes, and Phase 2 server
-      code are maintained privately:
+      code are maintained privately. Public pages track product direction and
+      status only.
     </p>
     <ul>
       <li>
-        <a
-          href="https://github.com/scalinghuman/streaming-devices-kids-meal-mode"
-          rel="noopener noreferrer"
-          >Private repo: scalinghuman/streaming-devices-kids-meal-mode</a
+        <strong>Public product page:</strong>
+        <a href="https://scalinghuman.ai/apps/streaming-devices-kids-meal-mode"
+          >scalinghuman.ai/apps/streaming-devices-kids-meal-mode</a
         >
       </li>
       <li>
-        Also mirrored under
+        <strong>Private source + APK:</strong>
+        <a
+          href="https://github.com/scalinghuman/streaming-devices-kids-meal-mode"
+          rel="noopener noreferrer"
+          >github.com/scalinghuman/streaming-devices-kids-meal-mode</a
+        >
+      </li>
+      <li>
+        <strong>Sideload APK (private):</strong>
+        <a
+          href="https://github.com/scalinghuman/streaming-devices-kids-meal-mode/blob/main/dist/KidsMealMode-firetv-debug.apk"
+          rel="noopener noreferrer"
+          >dist/KidsMealMode-firetv-debug.apk</a
+        >
+      </li>
+      <li>
+        <strong>Monorepo mirror:</strong>
         <a
           href="https://github.com/scalinghuman/experiments-development"
           rel="noopener noreferrer">experiments-development</a
         >
-        at <code>apps/streaming-devices-kids-meal-mode</code>
+        → <code>apps/streaming-devices-kids-meal-mode</code>
+      </li>
+      <li>
+        <strong>Public experiments docs:</strong>
+        <a
+          href="https://github.com/scalinghuman/experiments/blob/main/docs/apps/streaming-devices-kids-meal-mode.md"
+          rel="noopener noreferrer"
+          >docs/apps/streaming-devices-kids-meal-mode.md</a
+        >
       </li>
     </ul>
-    <p>
-      The public experiments page tracks product direction and status only. APK
-      distribution, source history, and implementation details remain private
-      until the app is ready for broader release.
-    </p>
 
     <h2>Roadmap</h2>
 
