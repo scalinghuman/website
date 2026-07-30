@@ -106,21 +106,55 @@ const app = appsBySlug["streaming-devices-kids-meal-mode"];
     </p>
 
 
-    <h2>Install on Fire TV (sideload)</h2>
+    <h2>Download &amp; install (public APK)</h2>
     <p>
-      Kids Meal Mode is distributed privately as a sideload APK for Android-based
-      Fire TV / Fire OS devices. It is not available on the Amazon Appstore.
+      The Fire TV APK is <strong>publicly available</strong> for sideloading. The
+      application source code remains private.
     </p>
     <p>
-      Install requires enabling <strong>ADB debugging</strong> on the Fire TV and
-      using a computer with the Android <code>adb</code> tool. Family testers
-      receive the APK and short install steps separately; default parent PIN is
-      <code>1234</code> (change in Settings after first PIN entry).
+      <a
+        class="button"
+        href="/downloads/KidsMealMode-firetv-debug.apk"
+        download
+        >Download KidsMealMode-firetv-debug.apk</a
+      >
+      · package <code>com.kidsmealmode</code> · build <code>1.0.13</code>
     </p>
     <p>
-      After install, open <strong>Kids Meal Mode</strong> and grant
-      <strong>Display over other apps</strong> so the meal-mode indicator can stay
-      visible.
+      Direct link:
+      <a href="https://scalinghuman.ai/downloads/KidsMealMode-firetv-debug.apk"
+        >https://scalinghuman.ai/downloads/KidsMealMode-firetv-debug.apk</a
+      >
+    </p>
+
+    <h3>Install on Fire TV with ADB</h3>
+    <ol>
+      <li>
+        On Fire TV: <strong>Settings → My Fire TV → Developer options</strong> —
+        enable <strong>ADB debugging</strong>. Allow installs from unknown
+        sources if prompted.
+      </li>
+      <li>Note the TV IP under <strong>About → Network</strong>.</li>
+      <li>
+        On a computer, install
+        <a
+          href="https://developer.android.com/tools/releases/platform-tools"
+          rel="noopener noreferrer"
+          >Android platform-tools</a
+        >
+        (<code>adb</code>), then:
+        <pre><code>adb connect &lt;fire-tv-ip&gt;:5555
+adb install -r KidsMealMode-firetv-debug.apk</code></pre>
+      </li>
+      <li>
+        Open <strong>Kids Meal Mode</strong> on the Fire TV and grant
+        <strong>Display over other apps</strong>.
+      </li>
+    </ol>
+    <p>
+      Default parent PIN: <code>1234</code> (change in Settings after PIN entry).
+      Use a supported streaming app for pause/resume (see compatibility matrix
+      below).
     </p>
 
 
@@ -251,13 +285,16 @@ const app = appsBySlug["streaming-devices-kids-meal-mode"];
       </table>
     </div>
 
-    <h2>Distribution</h2>
+
+    <h2>Source &amp; distribution</h2>
     <p>
-      Source code and APK builds are maintained privately for family testing.
-      This public page tracks product direction, status, and streaming-app
-      compatibility only. Contact
-      <a href="mailto:srikantha.ballani@gmail.com">srikantha.ballani@gmail.com</a>
-      if you are a trusted tester and need a sideload build.
+      <strong>APK:</strong> public download above for personal / family
+      sideloading on Fire TV.
+    </p>
+    <p>
+      <strong>Source code:</strong> remains private. This page tracks product
+      status and compatibility only; implementation is not open-sourced at this
+      time.
     </p>
 
 
