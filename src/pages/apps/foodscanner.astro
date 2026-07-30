@@ -73,23 +73,51 @@ const app = appsBySlug.foodscanner;
       <li>Custom OpenAI-compatible endpoints</li>
     </ul>
 
-    <h2>Optional Wearable Companion</h2>
+    <h2>Optional Wearable Companion (Google Glass XE)</h2>
     <p>
-      The optional wearable companion captures a food image and sends it to the
-      iPhone app over local Wi-Fi or iPhone Personal Hotspot. Analysis runs on
-      iPhone, and results are displayed back on the companion display.
+      The optional Google Glass XE companion captures a food image and sends it
+      to the iPhone app over local Wi-Fi or iPhone Personal Hotspot. Analysis
+      runs on iPhone, and results are displayed back on the companion display.
     </p>
     <p>
       <strong>Requires:</strong> Google Glass XE, ADB on a computer, and an
       iPhone Personal Hotspot. Connect Glass to the iPhone hotspot before
       opening Food Scanner.
     </p>
+
+    <h3>Install path: this page → GitHub</h3>
+    <ol>
+      <li>
+        Download the companion APK from the button below (or from the
+        <a
+          href="https://github.com/scalinghuman/experiments/releases/tag/glass-companions-v1.0.0"
+          rel="noopener noreferrer">GitHub release</a
+        >).
+      </li>
+      <li>
+        Follow the
+        <a href={companionApps.foodscanner.guideUrl} rel="noopener noreferrer"
+          >Google Glass XE installation guide on GitHub</a
+        >
+        for ADB install, USB debugging, and hotspot setup.
+      </li>
+      <li>Open this iPhone app and confirm the connection indicator.</li>
+      <li>
+        On Glass, open the <strong>scan food</strong> command and
+        <strong>tap</strong> the touchpad to launch — wait about one second,
+        then tap again to capture a food photo.
+      </li>
+    </ol>
+    <p>
+      <strong>Do not rely on saying “Ok Glass.”</strong> Use the touchpad tap
+      on the <strong>scan food</strong> Glass command.
+    </p>
     <p class="page-header__actions">
       <a class="btn btn--secondary" href={companionApps.foodscanner.apkUrl}>
         Download Google Glass companion (APK)
       </a>
       <a href={companionApps.foodscanner.guideUrl} rel="noopener noreferrer">
-        Installation guide
+        Installation guide on GitHub
       </a>
     </p>
 

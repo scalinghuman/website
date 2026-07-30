@@ -18,7 +18,7 @@ import { companionApps } from "../data/site";
       </p>
     </header>
 
-    <p class="updated">Last updated: July 8, 2026</p>
+    <p class="updated">Last updated: July 29, 2026</p>
 
     <ul>
       <li>
@@ -51,9 +51,14 @@ import { companionApps } from "../data/site";
     <h2>Food Scanner</h2>
     <p>
       Food Scanner can be used without companion hardware by choosing a food
-      photo from iPhone or taking a new iPhone camera photo. The optional
-      companion APK can capture a food image and send it to the iOS app over
-      local Wi-Fi or iPhone Personal Hotspot.
+      photo from iPhone or taking a new iPhone camera photo. The optional Google
+      Glass XE companion APK can capture a food image and send it to the iOS app
+      over local Wi-Fi or iPhone Personal Hotspot.
+    </p>
+    <p>
+      On Glass, open the <strong>scan food</strong> command and
+      <strong>tap</strong> the touchpad to launch and capture. Do not rely on
+      saying “Ok Glass.”
     </p>
     <p>
       Nutrition values are AI estimates for general information only, not medical
@@ -63,35 +68,47 @@ import { companionApps } from "../data/site";
     <h2>Glasshole</h2>
     <p>
       Glasshole can be used without companion hardware by tapping the microphone
-      button in the iOS app. The optional companion APK can start and stop
-      real-time conversation capture and display AI-powered fact-check overlays
-      after analysis.
+      button in the iOS app. The optional Google Glass XE companion APK can start
+      and stop real-time conversation capture and display AI-powered fact-check
+      overlays after analysis.
+    </p>
+    <p>
+      On Glass, open the <strong>fact check</strong> command and
+      <strong>tap</strong> the touchpad to launch, then tap again to start/stop
+      listening. Do not rely on saying “Ok Glass.”
     </p>
     <p>
       Use Glasshole only with the consent of everyone being recorded and in
       compliance with local laws and regulations where you use it.
     </p>
 
-    <h2>Common Setup</h2>
+    <h2>Common Setup (website → GitHub)</h2>
     <ol>
       <li>Install the iOS app from the App Store.</li>
       <li>
-        Download the matching companion APK:
+        From the app page on this site (or the links below), download the
+        matching companion APK:
         <a href={companionApps.foodscanner.apkUrl}>Food Scanner</a> or
         <a href={companionApps.glasshole.apkUrl}>Glasshole AI</a>.
+      </li>
+      <li>
+        Follow the
+        <a href={companionApps.foodscanner.guideUrl} rel="noopener noreferrer"
+          >Google Glass XE installation guide on GitHub</a
+        >
+        for ADB install, USB debugging, and hotspot setup.
       </li>
       <li>
         Connect Google Glass XE to your iPhone Personal Hotspot before opening
         the iPhone app.
       </li>
       <li>Open the iOS app and confirm the connection indicator.</li>
+      <li>
+        On Glass, <strong>tap</strong> the <strong>fact check</strong> or
+        <strong>scan food</strong> command — do not depend on “Ok Glass” voice
+        wake.
+      </li>
     </ol>
-    <p>
-      Companion setup requires ADB. Follow the
-      <a href={companionApps.foodscanner.guideUrl} rel="noopener noreferrer"
-        >Google Glass XE installation guide</a
-      > for USB debugging, hotspot setup, install commands, and updates.
-    </p>
 
     <div class="links-row">
       <a href="/privacy.html">Privacy Policy</a>
