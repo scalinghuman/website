@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { appStoreBadge, appsBySlug } from "../../data/site";
+import { appStoreBadge, appsBySlug, companionApps } from "../../data/site";
 
 const app = appsBySlug.foodscanner;
 ---
@@ -78,6 +78,14 @@ const app = appsBySlug.foodscanner;
       The optional wearable companion captures a food image and sends it to the
       iPhone app over local Wi-Fi or iPhone Personal Hotspot. Analysis runs on
       iPhone, and results are displayed back on the companion display.
+    </p>
+    <p class="page-header__actions">
+      <a class="btn btn--secondary" href={companionApps.foodscanner.apkUrl}>
+        Download Google Glass companion (APK)
+      </a>
+      <a href={companionApps.foodscanner.guide} rel="noopener noreferrer">
+        Installation guide
+      </a>
     </p>
 
     <h2>Notes</h2>

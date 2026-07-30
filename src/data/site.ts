@@ -89,5 +89,20 @@ export const appStoreBadge = {
   height: 40,
 } as const;
 
+export const companionApps = {
+  foodscanner: {
+    apkUrl:
+      "https://github.com/scalinghuman/experiments/releases/download/glass-companions-v1.0.0/foodscanner-glass-companion-v1.0.0.apk",
+    guideUrl:
+      "https://github.com/scalinghuman/experiments/blob/main/docs/glass/GLASS_INSTALL_GUIDE.md",
+  },
+  glasshole: {
+    apkUrl:
+      "https://github.com/scalinghuman/experiments/releases/download/glass-companions-v1.0.0/glasshole-glass-companion-v1.0.0.apk",
+    guideUrl:
+      "https://github.com/scalinghuman/experiments/blob/main/docs/glass/GLASS_INSTALL_GUIDE.md",
+  },
+} as const;
+
 /** Future: public products list — keep empty until work authorization / intentional launch. */
 export const products: Experiment[] = [];

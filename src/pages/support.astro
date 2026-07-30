@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { companionApps } from "../data/site";
 ---
 
 <BaseLayout
@@ -74,12 +75,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <h2>Common Setup</h2>
     <ol>
       <li>Install the iOS app from the App Store.</li>
-      <li>Install the companion APK from GitHub.</li>
+      <li>
+        Download the matching companion APK: <a href={companionApps.foodscanner.apkUrl}>Food Scanner</a> or <a href={companionApps.glasshole.apkUrl}>Glasshole AI</a>.
+      </li>
       <li>Connect the companion hardware to your iPhone Personal Hotspot.</li>
       <li>Open the iOS app and confirm the connection indicator.</li>
     </ol>
     <p>
-      Companion setup may require ADB and manual voice-command registration.
+      Companion setup requires ADB. Follow the <a href={companionApps.foodscanner.guide} rel="noopener noreferrer">Google Glass XE installation guide</a> for USB debugging, install commands, and updates.
     </p>
 
     <div class="links-row">

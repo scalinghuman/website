@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { appStoreBadge, appsBySlug } from "../../data/site";
+import { appStoreBadge, appsBySlug, companionApps } from "../../data/site";
 
 const app = appsBySlug.glasshole;
 ---
@@ -92,6 +92,14 @@ const app = appsBySlug.glasshole;
       wearable hardware and view returned results on the companion display. The
       companion connects to the iPhone app over local Wi-Fi or iPhone Personal
       Hotspot.
+    </p>
+    <p class="page-header__actions">
+      <a class="btn btn--secondary" href={companionApps.glasshole.apkUrl}>
+        Download Google Glass companion (APK)
+      </a>
+      <a href={companionApps.glasshole.guide} rel="noopener noreferrer">
+        Installation guide
+      </a>
     </p>
 
     <h2>Notes</h2>
