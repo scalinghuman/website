@@ -42,16 +42,20 @@ const app = appsBySlug["streaming-devices-kids-meal-mode"];
       resumes playback, and protects meal-mode exits with a configurable 4-digit
       parent PIN.
     </p>
+    <p>
+      <strong>Best supported:</strong> Fire TV Cube. Other Android TV devices
+      may install successfully but have not received the same family testing.
+    </p>
 
     <ul>
       <li><strong>Package:</strong> <code>com.kidsmealmode</code></li>
       <li>
-        <strong>Current private build:</strong> <code>1.0.13</code> (versionCode
-        14)
+        <strong>Current family sideload build:</strong> <code>1.0.13</code>
+        (versionCode 14)
       </li>
       <li>
-        <strong>Primary distribution:</strong> private ADB / sideload (not
-        Appstore yet)
+        <strong>Primary distribution:</strong> personal / family ADB sideload
+        (not on the Amazon Appstore)
       </li>
       <li><strong>Status:</strong> Phase 1 complete</li>
     </ul>
@@ -90,9 +94,7 @@ const app = appsBySlug["streaming-devices-kids-meal-mode"];
         Local FastAPI / WebSocket server scaffold for upcoming LAN vision
         validation
       </li>
-      <li>
-        Debug APK and full source kept in private implementation repositories
-      </li>
+      <li>Public APK for personal / family sideloading; source remains private</li>
     </ul>
 
     <h3>Distribution and store outlook</h3>
@@ -102,7 +104,7 @@ const app = appsBySlug["streaming-devices-kids-meal-mode"];
       approval is <strong>uncertain</strong> for this architecture:
       draw-over-other-apps and controlling other apps’ media are high-friction
       for review. A store “lite” build would need a different product shape. That
-      is fine — the experiment is useful as a private family tool first.
+      is fine — the experiment is useful as a family sideload tool first.
     </p>
 
 
@@ -116,7 +118,7 @@ const app = appsBySlug["streaming-devices-kids-meal-mode"];
         class="button"
         href="/downloads/KidsMealMode-firetv-debug.apk"
         download
-        >Download KidsMealMode-firetv-debug.apk</a
+        >Download Kids Meal Mode APK</a
       >
       · package <code>com.kidsmealmode</code> · build <code>1.0.13</code>
     </p>
@@ -125,6 +127,10 @@ const app = appsBySlug["streaming-devices-kids-meal-mode"];
       <a href="https://scalinghuman.ai/downloads/KidsMealMode-firetv-debug.apk"
         >https://scalinghuman.ai/downloads/KidsMealMode-firetv-debug.apk</a
       >
+    </p>
+    <p>
+      <strong>SHA-256:</strong>
+      <code>f1c95f6a0d452e41779e58cd8ce74a7a2e8b21f3cea0369338286592d4eda368</code>
     </p>
 
     <h3>Install on Fire TV with ADB</h3>
