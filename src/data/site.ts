@@ -73,7 +73,7 @@ export const experiments: Experiment[] = [
     iconAlt: "Kids Meal Mode app icon",
   },
   {
-    title: "Qwen3.8 27B Eval",
+    title: "Build Super Mario Web Edition for $0",
     kicker: "Local AI · Offline · Browser game",
     description:
       "A one-shot local-model experiment: build a complete Super Mario-style web game with no cloud inference, external assets, or follow-up prompts.",

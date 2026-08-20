@@ -8,11 +8,12 @@ const projectPath = `${publicProject}/apps/qwen38-27b-eval`;
 const gamePath = `${projectPath}/mario/index.html`;
 const videoPath = `${publicProject}/assets/qwen38-27b-eval/qwen-local-mario-demo.mp4`;
 const posterPath = `${publicProject}/assets/qwen38-27b-eval/qwen-local-mario-demo-poster.png`;
+const zipPath = `${publicProject}/assets/qwen38-27b-eval/super-mario-web-source.zip`;
 ---
 
 <BaseLayout
-  title="Qwen3.8 27B Eval — Local Mario Web Edition"
-  description="An offline, one-shot local-model experiment: build a complete Super Mario-style browser game with Qwen3.8 27B in LM Studio."
+  title="Build Super Mario Web Edition for $0"
+  description="An offline, one-shot local-model experiment: build a complete Super Mario-style browser game for $0 with Qwen3.8 27B in LM Studio."
   path="/apps/qwen38-27b-eval"
 >
   <article class="container prose">
@@ -31,7 +32,7 @@ const posterPath = `${publicProject}/assets/qwen38-27b-eval/qwen-local-mario-dem
         }
         <div>
           <p class="page-header__kicker">Local AI · Offline · Browser game</p>
-          <h1 class="page-header__title">Build Mario Web Edition for $0</h1>
+          <h1 class="page-header__title">Build Super Mario Web Edition for $0</h1>
         </div>
       </div>
       <p class="page-header__lead">
@@ -41,7 +42,9 @@ const posterPath = `${publicProject}/assets/qwen38-27b-eval/qwen-local-mario-dem
     </header>
 
     <p>
-      I asked a local Qwen3.8 27B model in LM Studio to make suitable assumptions
+      I asked a local{" "}
+      <a href="https://huggingface.co/Qwen/Qwen3.8-27B">Qwen3.8 27B</a> model in{" "}
+      <a href="https://lmstudio.ai/">LM Studio</a> to make suitable assumptions
       and build a Super Mario-style game for a web browser. After the model was
       already on the laptop, the run used no cloud inference, no API credits, and
       no follow-up prompts.
@@ -60,7 +63,8 @@ const posterPath = `${publicProject}/assets/qwen38-27b-eval/qwen-local-mario-dem
 
     <h2>Watch the local run</h2>
     <p>
-      The capture shows the prompt in LM Studio and the resulting game being
+      The capture shows the prompt in{" "}
+      <a href="https://lmstudio.ai/">LM Studio</a> and the resulting game being
       played in a local browser session.
     </p>
     <video
@@ -99,6 +103,37 @@ const posterPath = `${publicProject}/assets/qwen38-27b-eval/qwen-local-mario-dem
       <li>Runs directly from <code>file://</code> without an internet connection</li>
     </ul>
 
+    <h2>Download the source</h2>
+    <p>
+      The generated HTML, CSS, JavaScript, README, and test harness are available
+      as a zip of the original evaluation folder.
+    </p>
+    <p>
+      <a class="btn btn--secondary" href={zipPath}>Download super-mario-web-source.zip</a>
+    </p>
+
+    <h2>Tools used</h2>
+    <ul>
+      <li>
+        <a href="https://lmstudio.ai/">LM Studio</a> for local, offline inference
+      </li>
+      <li>
+        <a href="https://huggingface.co/Qwen/Qwen3.8-27B">Qwen3.8-27B</a>{" "}
+        open-weights model
+      </li>
+    </ul>
+
+    <h2>GPU poor, still useful</h2>
+    <p>
+      Hugging Face's GPU Poor framing fits this run: personal compute is enough
+      to ship a complete prototype when the model is small enough to run locally.
+    </p>
+    <img
+      class="project-media"
+      src="/assets/apps/huggingface-gpu-poor.png"
+      alt="Hugging Face GPU Poor meme used as context for this local evaluation"
+    />
+
     <h2>Why it matters</h2>
     <p>
       Local and edge models can make experimentation cheaper, more private, and
@@ -111,6 +146,7 @@ const posterPath = `${publicProject}/assets/qwen38-27b-eval/qwen-local-mario-dem
     <div class="links-row">
       <a href={projectPath}>GitHub Pages project page</a>
       <a href={`${projectPath}/mario/`}>Browse the playable artifact</a>
+      <a href={zipPath}>Download source zip</a>
       <a href="/">Home</a>
     </div>
   </article>
