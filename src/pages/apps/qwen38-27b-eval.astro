@@ -1,0 +1,117 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { appsBySlug } from "../../data/site";
+
+const app = appsBySlug["qwen38-27b-eval"];
+const publicProject = "https://scalinghuman.github.io/experiments";
+const projectPath = `${publicProject}/apps/qwen38-27b-eval`;
+const gamePath = `${projectPath}/mario/index.html`;
+const videoPath = `${publicProject}/assets/qwen38-27b-eval/qwen-local-mario-demo.mp4`;
+const posterPath = `${publicProject}/assets/qwen38-27b-eval/qwen-local-mario-demo-poster.png`;
+---
+
+<BaseLayout
+  title="Qwen3.8 27B Eval — Local Mario Web Edition"
+  description="An offline, one-shot local-model experiment: build a complete Super Mario-style browser game with Qwen3.8 27B in LM Studio."
+  path="/apps/qwen38-27b-eval"
+>
+  <article class="container prose">
+    <header class="page-header">
+      <div class="page-header__brand">
+        {
+          app.icon && (
+            <img
+              class="page-header__icon"
+              src={app.icon}
+              width="72"
+              height="72"
+              alt={app.iconAlt || "Qwen3.8 27B evaluation"}
+            />
+          )
+        }
+        <div>
+          <p class="page-header__kicker">Local AI · Offline · Browser game</p>
+          <h1 class="page-header__title">Build Mario Web Edition for $0</h1>
+        </div>
+      </div>
+      <p class="page-header__lead">
+        An informal test ride of local-model prowess: one prompt, Wi-Fi off, and
+        a playable web platformer four hours later.
+      </p>
+    </header>
+
+    <p>
+      I asked a local Qwen3.8 27B model in LM Studio to make suitable assumptions
+      and build a Super Mario-style game for a web browser. After the model was
+      already on the laptop, the run used no cloud inference, no API credits, and
+      no follow-up prompts.
+    </p>
+
+    <blockquote>
+      Create Super Mario game which can be played in a web-browser. Make suitable
+      assumptions.
+    </blockquote>
+
+    <p>
+      This is a practical, single-run experiment—not a benchmark or a broad claim
+      about model quality. The result is still notable: a self-contained game with
+      no dependencies, external assets, or network requests.
+    </p>
+
+    <h2>Watch the local run</h2>
+    <p>
+      The capture shows the prompt in LM Studio and the resulting game being
+      played in a local browser session.
+    </p>
+    <video
+      class="project-media"
+      controls
+      playsinline
+      preload="metadata"
+      poster={posterPath}
+    >
+      <source src={videoPath} type="video/mp4" />
+      Your browser does not support embedded video.
+    </video>
+
+    <h2>Play the artifact</h2>
+    <p>
+      The generated game is published as-is. Use arrow keys or <code>A</code> /
+      <code>D</code> to move, <code>Space</code> to jump, <code>Shift</code> to
+      run, <code>P</code> to pause, and <code>R</code> to restart.
+    </p>
+    <iframe
+      class="project-game"
+      src={gamePath}
+      title="Playable Super Mario-style web game built during the Qwen3.8 27B local evaluation"
+      allow="autoplay"
+    ></iframe>
+    <p>
+      <a class="btn btn--secondary" href={gamePath}>Open the game in its own tab</a>
+    </p>
+
+    <h2>Verified artifact</h2>
+    <ul>
+      <li>1,592 lines across HTML, CSS, and vanilla JavaScript</li>
+      <li>Canvas visuals and synthesized WebAudio; no downloaded art or libraries</li>
+      <li>Two levels, power-ups, enemies, shells, pipes, timer, pause, and restart</li>
+      <li>59 passing headless tests covering gameplay and render states</li>
+      <li>Runs directly from <code>file://</code> without an internet connection</li>
+    </ul>
+
+    <h2>Why it matters</h2>
+    <p>
+      Local and edge models can make experimentation cheaper, more private, and
+      more resilient when a task fits personal hardware. This small test does not
+      replace disciplined engineering, but it shows how a useful prototype can be
+      created where the marginal cost is closer to electricity than metered cloud
+      inference.
+    </p>
+
+    <div class="links-row">
+      <a href={projectPath}>GitHub Pages project page</a>
+      <a href={`${projectPath}/mario/`}>Browse the playable artifact</a>
+      <a href="/">Home</a>
+    </div>
+  </article>
+</BaseLayout>

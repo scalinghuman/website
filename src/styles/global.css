@@ -447,6 +447,22 @@ code {
   color: var(--text-secondary);
 }
 
+.project-media,
+.project-game {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  margin: 1.25rem auto;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: #000;
+}
+
+.project-game {
+  aspect-ratio: 960 / 700;
+  min-height: 28rem;
+}
+
 .hero__actions {
   display: flex;
   flex-wrap: wrap;

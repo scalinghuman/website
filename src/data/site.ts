@@ -72,6 +72,16 @@ export const experiments: Experiment[] = [
     icon: "/assets/apps/kids-meal-mode.png",
     iconAlt: "Kids Meal Mode app icon",
   },
+  {
+    title: "Qwen3.8 27B Eval",
+    kicker: "Local AI · Offline · Browser game",
+    description:
+      "A one-shot local-model experiment: build a complete Super Mario-style web game with no cloud inference, external assets, or follow-up prompts.",
+    href: "/apps/qwen38-27b-eval",
+    cta: "Play the experiment",
+    icon: "/assets/apps/qwen-local-mario-demo.png",
+    iconAlt: "Super Mario-style browser game created during a local AI evaluation",
+  },
 ];
 
 /** Lookup by page path segment for app detail pages */
@@ -79,6 +89,7 @@ export const appsBySlug = {
   foodscanner: experiments[0],
   glasshole: experiments[1],
   "streaming-devices-kids-meal-mode": experiments[2],
+  "qwen38-27b-eval": experiments[3],
 } as const;
 
 /** Official Apple badge (marketing guidelines asset). */
