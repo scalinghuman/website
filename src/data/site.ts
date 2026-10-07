@@ -82,6 +82,17 @@ export const experiments: Experiment[] = [
     icon: "/assets/apps/qwen-local-mario-demo.png",
     iconAlt: "Super Mario-style browser game created during a local AI evaluation",
   },
+
+  {
+    title: "Book Cricket",
+    kicker: "iPhone Duo · iPhone · Coming soon",
+    description:
+      "The classroom was the stadium. A nostalgic page-flip cricket game with solo and same-phone matches, plus 1,000 Cricket Facts by S Ballani. Free at launch.",
+    href: "/apps/book-cricket",
+    cta: "Screenshots & walkthrough",
+    icon: "/assets/apps/book-cricket/icon.png",
+    iconAlt: "Book Cricket: cricket ball, stumps and a book",
+  },
 ];
 
 /** Lookup by page path segment for app detail pages */
@@ -90,6 +101,7 @@ export const appsBySlug = {
   glasshole: experiments[1],
   "streaming-devices-kids-meal-mode": experiments[2],
   "qwen38-27b-eval": experiments[3],
+  "book-cricket": experiments[4],
 } as const;
 
 /** Official Apple badge (marketing guidelines asset). */

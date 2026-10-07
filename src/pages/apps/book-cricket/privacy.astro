@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Book Cricket Privacy Policy" description="Privacy information for Book Cricket: offline gameplay, local preferences and direct nearby-phone play." path="/apps/book-cricket/privacy">
+  <article class="container prose book-cricket-document">
+    <header class="page-header"><p class="page-header__kicker">Book Cricket · Legal</p><h1 class="page-header__title">Privacy Policy</h1><p class="page-header__lead">How the Book Cricket iPhone app handles information.</p></header>
+    <p class="updated">Effective date: October 7, 2026 · Version 1.0</p>
+    <h2>No developer data collection</h2>
+    <p>Book Cricket does not send personal information or gameplay data to Scaling Human or a developer-run server. It has no accounts, advertising, analytics SDK, tracking, cloud match service or in-app purchases. It does not access contacts, location, photos, camera or microphone.</p>
+    <h2>Offline gameplay and preferences</h2>
+    <p>Solo and same-phone matches are handled on the device. Scores, page draws and the active match are held for gameplay; this version does not maintain persistent match history. The scoring-page preference is stored locally in the app’s private settings. You can change it in match setup; deleting the app removes the app’s local settings.</p>
+    <p>On a foldable iPhone, hinge status recognizes closing and opening as a move. Hinge events are processed locally, are not stored as a history and are not transmitted to another player or the developer.</p>
+    <h2>Optional nearby-phone matches</h2>
+    <p>If you choose nearby play, Apple’s Multipeer Connectivity framework discovers and connects the two phones. The app asks for local-network access. Discovery and invitations use the phone’s device name; the player name you choose is shared directly with the other phone, along with the selected book/rules, page draws, scores and match state needed to play and reconnect.</p>
+    <p>The peer session requires encryption provided by Apple’s system framework. Nearby messages are handled on the participating phones, not uploaded to a hosted game service. The developer cannot see these messages. Enter a nickname if you do not want to share your name. Disconnecting ends the peer session; local-network access can be changed in iPhone Settings.</p>
+    <h2>Books and external references</h2>
+    <p>All six books and the facts search are bundled and available offline. The app does not download book content or send search queries to a server. If you open an ICC, MCC, NASA, Project Gutenberg, privacy or support link, your browser opens that website. That website and your browser handle the visit under their own policies; they may receive ordinary web information such as your IP address.</p>
+    <h2>Support</h2>
+    <p>If you email support, we receive the message and any details or attachments you choose to send so we can respond. Your mail app/provider handles delivery. Do not send private information that is unnecessary for the support request. For privacy requests, contact <a href="mailto:srikantha.ballani@gmail.com">srikantha.ballani@gmail.com</a>.</p>
+    <h2>Children</h2>
+    <p>The game does not require personal information or an account. Nearby players should use nicknames and connect only with people they know. The app does not include a chat or messaging feature.</p>
+    <h2>This website</h2>
+    <p>The scalinghuman.ai website may use Cloudflare Web Analytics for aggregate visits. This is separate from the app; Book Cricket does not send gameplay, hinge events or device information to website analytics.</p>
+    <h2>Changes</h2><p>This policy and the App Store privacy answers will be updated if a future release changes these practices.</p>
+    <div class="links-row"><a href="/apps/book-cricket/support">Book Cricket Support</a><a href="/contact.html">Contact</a><a href="/">Home</a></div>
+  </article>
+</BaseLayout>
+
+<style>
+  @media(max-width: 500px) {
+    :global(body:has(.book-cricket-document)) { --header-h: 88px; }
+    :global(body:has(.book-cricket-document) .site-header__inner) { flex-direction: column; align-items: flex-start; justify-content: center; gap: 8px; }
+    :global(body:has(.book-cricket-document) .nav) { gap: 18px; }
+  }
+</style>
