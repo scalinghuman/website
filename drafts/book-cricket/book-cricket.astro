@@ -2,7 +2,7 @@
 import BaseLayout from "../../src/layouts/BaseLayout.astro";
 // Public prelaunch page. Add the approved listing URL after App Review.
 const appStoreUrl: string | null = null;
-const nearbyReady = false; // Enable after the two-phone launch checks in AppStore/SUBMISSION_READINESS.md.
+const nearbyReady = true; // Physical nearby multiplayer confirmed by the user on 7 October 2026.
 const media = "/assets/apps/book-cricket";
 const gallery = [
   { file: "shelf.png", title: "Pick your book", text: "Six offline editions, led by 1,000 Cricket Facts by S Ballani.", alt: "Book Cricket shelf with six books and single-player and multiplayer choices" },
@@ -41,8 +41,8 @@ const chapters = [
     </header>
 
     <figure class="hero-shot">
-      <a href={`${media}/open-pages.png`} aria-label="Open full-size screenshot of the fact pages and scorecard"><img src={`${media}/open-pages.png`} width="1398" height="2034" fetchpriority="high" alt="Open Book Cricket spread with a highlighted page 277 scoring seven runs and a cricket facts entry on each page" /></a>
-      <figcaption>Your page number calls the ball. Your book teaches you something along the way.</figcaption>
+      <a href={`${media}/nostalgia-artwork.png`} aria-label="View the Book Cricket nostalgia illustration"><img src={`${media}/nostalgia-artwork.png`} width="1672" height="941" fetchpriority="high" alt="90s classroom cricket illustration: a stitched red cricket ball beside an open book, page 26 with only its last digit 6 circled, facing page 27" /></a>
+      <figcaption>Page 26. Last digit 6. A six before the bell.</figcaption>
     </figure>
 
     </div>
@@ -62,7 +62,7 @@ const chapters = [
       </video>
       <div class="chapter-links" aria-label="Walkthrough chapters">{chapters.map((chapter) => <button type="button" data-video-time={chapter.time}><span>{chapter.stamp}</span> {chapter.label}</button>)}</div>
       <ol class="walkthrough-steps">
-        <li><strong>Pick a book and a mode.</strong> Play the computer, or pass one phone between two players.</li>
+        <li><strong>Pick a book and a mode.</strong> Play the computer, pass one phone between two players, or invite a nearby player.</li>
         <li><strong>Choose the toss and scoring page.</strong> Either page is the default; left page only recreates conventional even-page play.</li>
         <li><strong>Close, then open.</strong> Read the highlighted last digit: 1–9 score runs; 0 costs a wicket.</li>
         <li><strong>Finish the innings and chase.</strong> Six balls make an over. Beat the first side’s total within five overs and five wickets.</li>
@@ -75,9 +75,20 @@ const chapters = [
       <div class="mode-grid">
         <div class="mode-card"><span>01</span><h3>You vs computer</h3><p>Bat first or field first. The computer plays its innings, then you chase or defend.</p></div>
         <div class="mode-card"><span>02</span><h3>One phone, two players</h3><p>Pass the book between friends. One shared screen keeps the match and target in view.</p></div>
-        <div class="mode-card"><span>03</span><h3>Nearby phones</h3><p>{nearbyReady ? "One hosts, the other joins. Play directly between nearby iPhones without an account or hosted match server." : "Direct play between nearby iPhones is being checked for launch. Solo and same-phone matches work offline."}</p></div>
+        <div class="mode-card"><span>03</span><h3>Nearby phones</h3><p>{nearbyReady ? "One hosts, the other joins and accepts the match. Play directly between nearby iPhones without an account or hosted match server. Allow local-network access on both phones and keep the app open." : "Direct play between nearby iPhones is being checked for launch. Solo and same-phone matches work offline."}</p></div>
       </div>
       <p class="quiet-note">No accounts, ads or in-app purchases. Hosted online multiplayer is a future feature.</p>
+    </section>
+
+    <section class="section-block" aria-labelledby="previews-title">
+      <p class="eyebrow">A ball, a replay, a little reading</p><h2 id="previews-title">See the book come alive.</h2>
+      <p>Two 28-second previews recorded in the app: open the book, hit a six, lose a wicket and explore the facts shelf.</p>
+      <div class="device-previews">
+        {[
+          { device: "duo", title: "On iPhone Duo", text: "Your fold becomes the book’s spine." },
+          { device: "iphone", title: "On your iPhone", text: "Tap to close and open the book. The scorecard stays put." },
+        ].map((preview) => <figure><h3>{preview.title}</h3><video controls playsinline preload="none" poster={`${media}/${preview.device}-preview-poster.png`} width="886" height="1920" aria-label={`${preview.title}: Book Cricket gameplay preview`}><source src={`${media}/${preview.device}-preview.mp4`} type="video/mp4" /><track kind="captions" src={`${media}/gameplay-preview.vtt`} srclang="en" label="English instructions" default /><p><a href={`${media}/${preview.device}-preview.mp4`}>Download the gameplay preview</a>.</p></video><figcaption>{preview.text}</figcaption></figure>)}
+      </div>
     </section>
 
     <section class="section-block" aria-labelledby="gallery-title">
@@ -90,6 +101,7 @@ const chapters = [
       <p class="eyebrow">A shelf worth opening</p><h2 id="books-title">One thousand reasons to turn a page.</h2>
       <p><strong>1,000 Cricket Facts by S Ballani</strong> is your default book: Indian legends, women’s cricket, World Cups, history, equipment and the Laws. Every numbered page holds one complete fact.</p>
       <p>Follow it into <strong>100 Space Facts</strong>, then revisit a classic story or Faraday’s science lectures. All six books are bundled for offline reading and play. Fact references open in your browser when you’re online.</p>
+      <p>The classic editions include their full source licence and an intact original text you can save or share for free from the app.</p>
       <ul class="book-list"><li>1,000 Cricket Facts <span>S Ballani</span></li><li>100 Space Facts <span>Backbench Club · NASA references</span></li><li>The Time Machine <span>H. G. Wells</span></li><li>Frankenstein <span>Mary Shelley · 1831 edition</span></li><li>The Lost World <span>Arthur Conan Doyle</span></li><li>The Chemical History of a Candle <span>Michael Faraday · 1908 impression</span></li></ul>
     </section>
 
@@ -106,6 +118,7 @@ const chapters = [
       <details><summary>Where does my data go?</summary><p>The app has no analytics, advertising or accounts. Nearby matches share player names and match moves directly with the other phone. They are not sent to a developer-run server. Read the <a href="/apps/book-cricket/privacy">privacy policy</a> for details.</p></details>
     </section>
     <div class="links-row"><a href="/apps/book-cricket/privacy">Privacy Policy</a><a href="/apps/book-cricket/support">Book Cricket Support</a><a href="/">Scaling Human</a></div>
+    <p class="quiet-note app-copyright">© 2026 ScalingHuman AI · Cricket facts by S Ballani.</p>
   </article>
 </BaseLayout>
 <script>
@@ -143,6 +156,11 @@ const chapters = [
   button:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
   .walkthrough-steps { max-width: 800px; font-size: .96rem; }
   .walkthrough-steps li { margin-bottom: 12px; }
+  .device-previews { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 24px; }
+  .device-previews video { display: block; width: 100%; height: auto; max-height: 640px; background: var(--book-paper); border: 1px solid var(--border-strong); border-radius: 16px; }
+  .device-previews h3 { margin-bottom: 12px; }
+  .device-previews figcaption { font-size: .9rem; margin-top: 12px; }
+  .app-copyright { margin: 24px 0 0; }
   .mode-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
   .mode-card { background: var(--bg-subtle); border-radius: 14px; padding: 25px; }
   .mode-card span { font: 600 .8rem var(--font-mono); color: var(--text-tertiary); }
@@ -164,7 +182,7 @@ const chapters = [
   .questions summary { font-weight: 600; color: var(--text); cursor: pointer; }
   .questions details p { font-size: .96rem; margin: 12px 0 0; max-width: 780px; }
   .links-row { display: flex; flex-wrap: wrap; gap: 16px 24px; font-size: .92rem; margin-top: 40px; padding-top: 25px; border-top: 1px solid var(--border); }
-  @media(max-width: 700px) { .intro-grid { grid-template-columns: 1fr; gap: 28px; } .ritual, .flat-phone { grid-template-columns: 1fr; gap: 15px; } .mode-grid { grid-template-columns: 1fr; } .screenshot-grid { grid-template-columns: 1fr; } .book-list { grid-template-columns: 1fr; } .section-block { margin-top: 35px; } .nostalgia { font-size: 2.3rem; } .phone-shots { max-width: 430px; } }
+  @media(max-width: 700px) { .intro-grid { grid-template-columns: 1fr; gap: 28px; } .ritual, .flat-phone { grid-template-columns: 1fr; gap: 15px; } .mode-grid, .device-previews { grid-template-columns: 1fr; } .screenshot-grid { grid-template-columns: 1fr; } .book-list { grid-template-columns: 1fr; } .section-block { margin-top: 35px; } .nostalgia { font-size: 2.3rem; } .phone-shots { max-width: 430px; } }
   @media(max-width: 500px) {
     :global(body:has(.book-cricket-page)) { --header-h: 88px; }
     :global(body:has(.book-cricket-page) .site-header__inner) { flex-direction: column; align-items: flex-start; justify-content: center; gap: 8px; }

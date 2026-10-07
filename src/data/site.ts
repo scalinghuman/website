@@ -87,7 +87,7 @@ export const experiments: Experiment[] = [
     title: "Book Cricket",
     kicker: "iPhone Duo · iPhone · Coming soon",
     description:
-      "The classroom was the stadium. A nostalgic page-flip cricket game with solo and same-phone matches, plus 1,000 Cricket Facts by S Ballani. Free at launch.",
+      "The classroom was the stadium. A nostalgic page-flip cricket game with solo, same-phone and nearby matches, plus 1,000 Cricket Facts by S Ballani. Free at launch.",
     href: "/apps/book-cricket",
     cta: "Screenshots & walkthrough",
     icon: "/assets/apps/book-cricket/icon.png",
