@@ -55,4 +55,12 @@ From BookCricket, `Scripts/capture_submission_media.py` captures fresh native sc
 
 ## Verification
 
-Final preview and production-source builds passed. The local browser checks passed for video playback (46 seconds), captions, chapter seeking, FAQ, support/privacy links and 390px mobile layout. Proof screenshots and the check record are in `qa/`. The public privacy route still returns 404 until deployment. Screenshot normalization for store delivery is recorded separately in `AppStore/Screenshots/README.md`.
+Final preview and production-source builds passed. The local browser checks passed for video playback (46 seconds), captions, chapter seeking, FAQ, support/privacy links and 390px mobile layout. Proof screenshots and the check record are in `qa/`. All three public routes were deployed and verified HTTP 200 on 7 October 2026 (commit f04e778; GitHub Pages run 37579058956). Screenshot normalization for store delivery is recorded separately in `AppStore/Screenshots/README.md`.
+
+## Published URLs
+
+- https://scalinghuman.ai/apps/book-cricket
+- https://scalinghuman.ai/apps/book-cricket/privacy
+- https://scalinghuman.ai/apps/book-cricket/support
+
+Publication record: `publication.json`. The page is marked Coming soon and the approved App Store download URL is still pending.
