@@ -1,10 +1,10 @@
 /**
- * Site content config — swap featured lists later without redesign.
+ * Site content config: swap featured lists later without redesign.
  * Voice: personal, noncommercial experiments under a shared name.
  * When products go public (after proper work authorization), populate `products`.
  */
 
-/** Signature tagline — tech-native form is intentional. */
+/** Signature tagline: tech-native form is intentional. */
 export const tagline = "Humans + Machines >> Humans | Machines" as const;
 
 /** Plain-language reading for assistive tech (operators can be noisy). */
@@ -56,7 +56,7 @@ export const experiments: Experiment[] = [
     title: "Food Scanner",
     kicker: "iPhone · App Store",
     description:
-      "Turn a food photo into an AI-assisted nutrition overlay — calories, macros, and concise pros and cons. Standalone on iPhone, optional wearable companion.",
+      "Turn a food photo into an AI-assisted nutrition overlay: calories, macros, and concise pros and cons. Standalone on iPhone, optional wearable companion.",
     href: "/apps/foodscanner",
     cta: "Details",
     appStoreUrl: "https://apps.apple.com/us/app/food-scanner-ai-overlay/id6790629113",
@@ -71,7 +71,7 @@ export const experiments: Experiment[] = [
     title: "Glasshole AI",
     kicker: "iPhone · App Store",
     description:
-      "Live AI fact-check and overlay for spoken conversation. Records only when you start a session — use only with consent and local law compliance.",
+      "Live AI fact-check and overlay for spoken conversation. Records only when you start a session. Use only with consent and local law compliance.",
     href: "/apps/glasshole",
     cta: "Details",
     appStoreUrl:
@@ -170,5 +170,5 @@ export const companionApps = {
   },
 } as const;
 
-/** Future: public products list — keep empty until work authorization / intentional launch. */
+/** Future: public products list: keep empty until work authorization / intentional launch. */
 export const products: Experiment[] = [];

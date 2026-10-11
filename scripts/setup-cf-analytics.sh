@@ -41,7 +41,7 @@ if command -v gh >/dev/null 2>&1; then
   printf '%s' "${TOKEN}" | gh secret set PUBLIC_CF_BEACON_TOKEN --repo "${REPO}"
   echo "✓ Set GitHub secret PUBLIC_CF_BEACON_TOKEN on ${REPO}"
 else
-  echo "! gh not found — set the secret manually:"
+  echo "! gh not found: set the secret manually:"
   echo "  gh secret set PUBLIC_CF_BEACON_TOKEN --repo ${REPO}"
 fi
 

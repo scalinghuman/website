@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scaling Human Webpages"
+  short_description: "Update and verify Scaling Human project webpages"
+  default_prompt: "Use $scalinghuman-websites to update the project page and verify its publication."

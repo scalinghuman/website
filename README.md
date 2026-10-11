@@ -31,10 +31,12 @@ Open [http://localhost:4321](http://localhost:4321).
 ```bash
 npm run build
 npm run check:links
+npm run check:quality
 npm run preview
 ```
 
-Static output lands in `dist/`. Main-branch pushes are built, checked and deployed
+Use `npm run check` to run all three checks together. Static output lands in
+`dist/`. Main-branch pushes are built, checked, deployed and verified live
 by the existing GitHub Pages workflow. See [DEPLOY.md](DEPLOY.md) for the custom
 domain and DNS configuration. Cloudflare Web Analytics remains optional through
 the existing `PUBLIC_CF_BEACON_TOKEN` setting.
@@ -67,6 +69,11 @@ Keep both forms reachable. The homepage preserves `#projects`, `#work` and
 [Link policy](docs/link-policy.md) and [published URL contract](docs/published-links.json)
 explain how to reorganize content while preserving these paths, APKs and App Store
 links. The deployment check catches missing local links and removed contract URLs.
+
+[Website workflow](docs/website-workflow.md) explains how to update existing or new
+project pages from any local project folder. The shared Codex skill routes the
+work to this repository. Every published build records its commit and page hashes
+in `/deployment.json`, and the workflow verifies the live content after deployment.
 
 ## Content and artwork
 

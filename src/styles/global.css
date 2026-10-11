@@ -1,4 +1,4 @@
-/* Scaling Human — Apple-inspired design system */
+/* Scaling Human: Apple-inspired design system */
 :root {
   color-scheme: light dark;
 
@@ -401,7 +401,7 @@ code {
   font-weight: 800;
 }
 
-/* >> : neon green — smooth pulse */
+/* >> : neon green: smooth pulse */
 .tagline__op--shift {
   color: #a6ff63;
   animation: matrix-pulse 1.8s ease-in-out infinite;
@@ -630,7 +630,7 @@ code {
   letter-spacing: -0.01em;
 }
 
-/* Label / value rows — explicit gap so “Email:value” never collapses */
+/* Label / value rows: explicit gap so “Email:value” never collapses */
 .contact-dl {
   margin: 0;
   padding: 0.35rem 0 0;

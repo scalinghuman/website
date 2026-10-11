@@ -1,3 +1,11 @@
+## Website ownership and publication
+
+This repository deploys scalinghuman.ai. Read [docs/website-workflow.md](docs/website-workflow.md)
+for existing and new project pages, including tasks started in other folders.
+Avoid em dashes in authored copy. Preserve published URLs and HTML-aware inline
+spacing. Run `npm run check`, inspect changed desktop and phone layouts, and verify
+the exact commit's deployment and live checks before reporting publication complete.
+
 ## Development
 
 When starting the dev server, use background mode:

@@ -9,12 +9,17 @@
 
 ## Automated deploy
 
-Push to `main` runs `.github/workflows/deploy.yml` (build + Pages).
+Push to `main` runs `.github/workflows/deploy.yml` (checks, build, Pages and live verification).
+Pull requests run the pre-deployment checks. See [the cross-project website workflow](docs/website-workflow.md).
 
 ```bash
-npm run build   # local check
+npm run check   # build, published links and copy quality
 git push origin main
 ```
+
+After the workflow finishes, `npm run check:live -- --revision <full-commit-sha>`
+verifies the deployed revision, page and caption hashes, aliases and downloads.
+Do not treat a successful push as a successful deployment.
 
 ## Spaceship DNS (typical GitHub Pages)
 
@@ -28,7 +33,7 @@ In Spaceship → domain → DNS, keep (or set):
 | **A** | `@` | `185.199.111.153` | |
 | **CNAME** | `www` | `scalinghuman.github.io` | org Pages |
 
-If Spaceship already points at GitHub for this domain, you may not need DNS changes—only the **Pages custom domain** moves to the new repo.
+If Spaceship already points at GitHub for this domain, you may not need DNS changes. Only the **Pages custom domain** moves to the new repo.
 
 ## Domain cutover (from experiments → website)
 
