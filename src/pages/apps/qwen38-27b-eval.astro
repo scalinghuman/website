@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectNavigation from "../../components/ProjectNavigation.astro";
 import { appsBySlug } from "../../data/site";
 
 const app = appsBySlug["qwen38-27b-eval"];
@@ -39,7 +40,18 @@ const zipPath = `${publicProject}/assets/qwen38-27b-eval/super-mario-web-source.
         An informal test ride of local-model prowess: one prompt, Wi-Fi off, and
         a playable web platformer four hours later.
       </p>
+      <div class="page-header__actions">
+        <a class="btn btn--primary" href={gamePath}>Play the game</a>
+        <a class="btn btn--secondary" href={zipPath}>Download source</a>
+      </div>
     </header>
+
+    <ProjectNavigation links={[
+      { label: "Watch the run", href: "#local-run" },
+      { label: "Play here", href: "#play" },
+      { label: "Source & tools", href: "#source" },
+      { label: "Project notes", href: app.briefUrl },
+    ]} />
 
     <p>
       I asked a local{" "}
@@ -61,7 +73,7 @@ const zipPath = `${publicProject}/assets/qwen38-27b-eval/super-mario-web-source.
       no dependencies, external assets, or network requests.
     </p>
 
-    <h2>Watch the local run</h2>
+    <h2 id="local-run">Watch the local run</h2>
     <p>
       The capture shows the prompt in{" "}
       <a href="https://lmstudio.ai/">LM Studio</a> and the resulting game being
@@ -78,7 +90,7 @@ const zipPath = `${publicProject}/assets/qwen38-27b-eval/super-mario-web-source.
       Your browser does not support embedded video.
     </video>
 
-    <h2>Play the artifact</h2>
+    <h2 id="play">Play the artifact</h2>
     <p>
       The generated game is published as-is. Use arrow keys or <code>A</code> /
       <code>D</code> to move, <code>Space</code> to jump, <code>Shift</code> to
@@ -103,7 +115,7 @@ const zipPath = `${publicProject}/assets/qwen38-27b-eval/super-mario-web-source.
       <li>Runs directly from <code>file://</code> without an internet connection</li>
     </ul>
 
-    <h2>Download the source</h2>
+    <h2 id="source">Download the source</h2>
     <p>
       The generated HTML, CSS, JavaScript, README, and test harness are available
       as a zip of the original evaluation folder.

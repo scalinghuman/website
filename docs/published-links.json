@@ -35,25 +35,92 @@
   ],
   "anchors": {
     "/index.html": [
+      "available",
+      "available-heading",
+      "collection-heading",
       "experiments",
+      "in-development",
+      "in-development-heading",
+      "main-content",
       "projects",
       "projects-heading",
       "work"
     ],
     "/contact.html": [
-      "app-support-heading"
+      "app-support-heading",
+      "main-content"
     ],
     "/apps/book-cricket.html": [
       "book-cricket-video",
       "books-title",
       "gallery-title",
       "iphone-title",
+      "main-content",
       "modes-title",
       "previews-title",
       "questions-title",
       "ritual-title",
       "walkthrough",
       "walkthrough-title"
+    ],
+    "/support.html": [
+      "main-content"
+    ],
+    "/privacy.html": [
+      "main-content"
+    ],
+    "/apps/streaming-devices-kids-meal-mode.html": [
+      "compatibility",
+      "family-use",
+      "install",
+      "main-content",
+      "roadmap"
+    ],
+    "/apps/strap-local.html": [
+      "connection",
+      "main-content",
+      "privacy",
+      "rights",
+      "validation"
+    ],
+    "/apps/qwen38-27b-eval.html": [
+      "local-run",
+      "main-content",
+      "play",
+      "source"
+    ],
+    "/apps/glasshole.html": [
+      "main-content",
+      "processing",
+      "recording",
+      "wearable"
+    ],
+    "/apps/foodscanner.html": [
+      "main-content",
+      "processing",
+      "wearable"
+    ],
+    "/apps/ring-local.html": [
+      "connection",
+      "main-content",
+      "privacy",
+      "rights",
+      "validation"
+    ],
+    "/apps/rt-library.html": [
+      "main-content"
+    ],
+    "/apps/book-cricket/support.html": [
+      "main-content"
+    ],
+    "/apps/book-cricket/privacy.html": [
+      "main-content"
+    ],
+    "/apps/rt-library/support.html": [
+      "main-content"
+    ],
+    "/apps/rt-library/privacy.html": [
+      "main-content"
     ]
   },
   "downloads": [

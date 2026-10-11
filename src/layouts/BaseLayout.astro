@@ -43,8 +43,9 @@ const pageTitle =
     <title>{pageTitle}</title>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <Header />
-    <main class="site-main">
+    <main class="site-main" id="main-content" tabindex="-1">
       <slot />
     </main>
     <Footer />

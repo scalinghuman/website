@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectNavigation from "../../components/ProjectNavigation.astro";
 import { appStoreBadge, appsBySlug, companionApps } from "../../data/site";
 
 const app = appsBySlug.glasshole;
@@ -49,10 +50,18 @@ const app = appsBySlug.glasshole;
                 alt={appStoreBadge.alt}
               />
             </a>
+            <a href={app.briefUrl}>Project notes ↗</a>
           </p>
         )
       }
     </header>
+
+    <ProjectNavigation links={[
+      { label: "Recording & data", href: "#recording" },
+      { label: "Processing options", href: "#processing" },
+      { label: "Glass setup", href: "#wearable" },
+      { label: "Support", href: "/support.html" },
+    ]} />
 
     <p>
       The app acts as an AI-powered live or real-time fact-checker and overlay
@@ -61,7 +70,7 @@ const app = appsBySlug.glasshole;
       display.
     </p>
 
-    <h2>Supported Modes and Models</h2>
+    <h2 id="processing">Supported Modes and Models</h2>
     <ul>
       <li>Apple Intelligence on compatible iPhones</li>
       <li>xAI Grok</li>
@@ -73,7 +82,7 @@ const app = appsBySlug.glasshole;
       <li>Custom OpenAI-compatible endpoints</li>
     </ul>
 
-    <h2>Consent and Recording</h2>
+    <h2 id="recording">Consent and Recording</h2>
     <p>
       Glasshole records audio only when a user starts a session. Use it only with
       the consent of everyone being recorded and in compliance with local laws
@@ -86,7 +95,7 @@ const app = appsBySlug.glasshole;
       is sent to that provider.
     </p>
 
-    <h2>Optional Wearable Companion (Google Glass XE)</h2>
+    <h2 id="wearable">Optional Wearable Companion (Google Glass XE)</h2>
     <p>
       The optional Google Glass XE companion lets you start sessions from Glass
       and view returned results on the prism. The companion connects to the
@@ -98,7 +107,7 @@ const app = appsBySlug.glasshole;
       opening Glasshole AI.
     </p>
 
-    <h3>Install path: this page → GitHub</h3>
+    <h3>Install the optional companion</h3>
     <ol>
       <li>
         Download the companion APK from the button below (or from the

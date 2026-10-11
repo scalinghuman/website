@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectNavigation from "../../components/ProjectNavigation.astro";
 import { appStoreBadge, appsBySlug, companionApps } from "../../data/site";
 
 const app = appsBySlug.foodscanner;
@@ -49,10 +50,18 @@ const app = appsBySlug.foodscanner;
                 alt={appStoreBadge.alt}
               />
             </a>
+            <a href={app.briefUrl}>Project notes ↗</a>
           </p>
         )
       }
     </header>
+
+    <ProjectNavigation links={[
+      { label: "Processing options", href: "#processing" },
+      { label: "Glass setup", href: "#wearable" },
+      { label: "Privacy", href: "/privacy.html" },
+      { label: "Support", href: "/support.html" },
+    ]} />
 
     <p>
       The app turns a food photo into an AI-assisted nutrition overlay with
@@ -61,7 +70,7 @@ const app = appsBySlug.foodscanner;
       from the optional wearable companion.
     </p>
 
-    <h2>Supported Modes and Models</h2>
+    <h2 id="processing">Supported Modes and Models</h2>
     <ul>
       <li>Local iPhone Vision (default, on device)</li>
       <li>xAI Grok</li>
@@ -73,7 +82,7 @@ const app = appsBySlug.foodscanner;
       <li>Custom OpenAI-compatible endpoints</li>
     </ul>
 
-    <h2>Optional Wearable Companion (Google Glass XE)</h2>
+    <h2 id="wearable">Optional Wearable Companion (Google Glass XE)</h2>
     <p>
       The optional Google Glass XE companion captures a food image and sends it
       to the iPhone app over local Wi-Fi or iPhone Personal Hotspot. Analysis
@@ -85,7 +94,7 @@ const app = appsBySlug.foodscanner;
       opening Food Scanner.
     </p>
 
-    <h3>Install path: this page → GitHub</h3>
+    <h3>Install the optional companion</h3>
     <ol>
       <li>
         Download the companion APK from the button below (or from the

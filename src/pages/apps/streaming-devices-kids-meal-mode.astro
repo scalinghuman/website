@@ -1,12 +1,13 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectNavigation from "../../components/ProjectNavigation.astro";
 import { appsBySlug } from "../../data/site";
 
 const app = appsBySlug["streaming-devices-kids-meal-mode"];
 ---
 
 <BaseLayout
-  title="Streaming Devices - Kids Meal Mode"
+  title="Kids Meal Mode"
   description="Kids Meal Mode is a Fire TV / Android TV experiment with timed bite prompts and parent PIN gates during screen time."
   path="/apps/streaming-devices-kids-meal-mode"
 >
@@ -34,7 +35,22 @@ const app = appsBySlug["streaming-devices-kids-meal-mode"];
         keep eating during screen time with friendly timed bite prompts,
         parent-confirmed meal completion, and positive early-finish rewards.
       </p>
+      <div class="page-header__actions">
+        <a class="btn btn--primary" href="/downloads/KidsMealMode-firetv-debug.apk" download>Download APK</a>
+        <a href="#install">Installation steps ↓</a>
+      </div>
     </header>
+
+    <ProjectNavigation links={[
+      { label: "Install", href: "#install" },
+      { label: "Compatibility", href: "#compatibility" },
+      { label: "Roadmap", href: "#roadmap" },
+      { label: "Project notes", href: app.briefUrl },
+    ]} />
+    <aside class="project-status">
+      <strong>Check your streaming app before installing.</strong>
+      <p>Best tested on Fire TV Cube. Netflix and Paramount+ did not reliably resume in the recorded tests. <a href="#compatibility">See the compatibility table</a>.</p>
+    </aside>
 
     <p>
       The current build targets Fire TV Cube and Android TV streaming devices. It
@@ -108,14 +124,14 @@ const app = appsBySlug["streaming-devices-kids-meal-mode"];
     </p>
 
 
-    <h2>Download &amp; install (public APK)</h2>
+    <h2 id="install">Download &amp; install (public APK)</h2>
     <p>
       The Fire TV APK is <strong>publicly available</strong> for sideloading. The
       application source code remains private.
     </p>
     <p>
       <a
-        class="button"
+        class="btn btn--primary"
         href="/downloads/KidsMealMode-firetv-debug.apk"
         download
         >Download Kids Meal Mode APK</a
@@ -164,7 +180,7 @@ adb install -r KidsMealMode-firetv-debug.apk</code></pre>
     </p>
 
 
-    <h2>Streaming App Compatibility</h2>
+    <h2 id="compatibility">Streaming App Compatibility</h2>
     <p>
       Kids Meal Mode uses standard Android media key events
       (<code>MEDIA_PAUSE</code> / <code>MEDIA_PLAY</code>) rather than
@@ -303,7 +319,7 @@ adb install -r KidsMealMode-firetv-debug.apk</code></pre>
     </p>
 
 
-    <h2>Roadmap</h2>
+    <h2 id="roadmap">Roadmap</h2>
 
     <h3>Phase 1 - Fire TV Product Iteration ✅ Complete</h3>
     <p>
@@ -362,7 +378,7 @@ adb install -r KidsMealMode-firetv-debug.apk</code></pre>
       </li>
     </ul>
 
-    <h2>Notes</h2>
+    <h2 id="family-use">Notes</h2>
     <ul>
       <li>Designed for parent-supervised mealtimes.</li>
       <li>
@@ -376,9 +392,9 @@ adb install -r KidsMealMode-firetv-debug.apk</code></pre>
     </ul>
 
     <div class="links-row">
-      <a href="/privacy.html">Privacy Policy</a>
-      <a href="/support.html">Support</a>
-      <a href="/">Home</a>
+      <a href={app.briefUrl}>Project notes</a>
+      <a href="/contact.html">Contact for support</a>
+      <a href="/#projects">All projects</a>
     </div>
   </article>
 </BaseLayout>

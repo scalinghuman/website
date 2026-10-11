@@ -58,8 +58,8 @@ Keep both forms reachable. The homepage preserves `#projects`, `#work` and
 | `/apps/book-cricket` | Book Cricket |
 | `/apps/book-cricket/privacy` | Book Cricket privacy |
 | `/apps/book-cricket/support` | Book Cricket support |
-| `/apps/ring-local` | Ring Local, in development |
-| `/apps/strap-local` | Strap Local, in development |
+| `/apps/ring-local` | Smart Ring Local, in development |
+| `/apps/strap-local` | Smart Strap Local, in development |
 | `/apps/rt-library` | RT Library, a separate co-op utility |
 | `/apps/rt-library/privacy` | RT Library privacy |
 | `/apps/rt-library/support` | RT Library support |
