@@ -1,5 +1,5 @@
 ---
-import { person } from "../data/site";
+import { collection, person } from "../data/site";
 import Tagline from "./Tagline.astro";
 
 const year = new Date().getFullYear();
@@ -11,14 +11,17 @@ const year = new Date().getFullYear();
       <p class="site-footer__meta site-footer__tagline">
         <Tagline subtle />
         <span aria-hidden="true"> · </span>
-        Free tools and open experiments.
+        Personal, noncommercial experiments.
       </p>
       <ul class="site-footer__links">
         <li><a href="/privacy.html">Privacy</a></li>
         <li><a href="/support.html">Support</a></li>
         <li><a href="/contact.html">Contact</a></li>
         <li>
-          <a href={person.github} rel="noopener noreferrer">GitHub</a>
+          <a href={collection.organization} rel="noopener noreferrer">GitHub</a>
+        </li>
+        <li>
+          <a href={collection.websiteSource} rel="noopener noreferrer">Site source</a>
         </li>
         <li>
           <a href={person.linkedin} rel="noopener noreferrer">LinkedIn</a>

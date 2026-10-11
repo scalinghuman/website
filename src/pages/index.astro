@@ -2,12 +2,17 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ExperimentCard from "../components/ExperimentCard.astro";
 import Tagline from "../components/Tagline.astro";
-import { experiments, person, tagline } from "../data/site";
+import { collection, experiments, person, tagline } from "../data/site";
+
+const groups = [
+  { status: "available", id: "available", title: "Available to try", description: "Free App Store apps, a family sideload build and a playable browser experiment." },
+  { status: "development", id: "in-development", title: "In development", description: "Project pages share the scope and progress. App downloads are not available yet." },
+] as const;
 ---
 
 <BaseLayout
   title="Scaling Human"
-  description={`${tagline}. Free hardware and AI tools under the Scaling Human name — open experiments and apps, free to use.`}
+  description={`${tagline}. Personal, noncommercial experiments with hardware, AI, apps, games and local computing.`}
   path="/"
 >
   <section class="hero container">
@@ -24,18 +29,18 @@ import { experiments, person, tagline } from "../data/site";
       <Tagline />
     </p>
     <p class="hero__lead">
-      Free tools and open experiments that explore how machines can extend human
-      perception, memory, judgment, and capability. Apps and notes are shared as
-      they become useful — everything on this site is free to use.
+      Personal experiments with hardware, AI, apps, games and local computing.
+      Built to learn how machines can extend human perception, memory, judgment
+      and capability. Apps and notes are shared for free as they become useful.
     </p>
     <div class="hero__actions">
       <a class="btn btn--primary" href="#projects">See projects</a>
       <a
         class="btn btn--secondary"
-        href={person.github}
+        href={collection.github}
         rel="noopener noreferrer"
       >
-        GitHub
+        Explore the collection
       </a>
     </div>
   </section>
@@ -48,35 +53,50 @@ import { experiments, person, tagline } from "../data/site";
     <!-- #work kept for older in-page links -->
     <div class="section__header" id="work">
       <span id="experiments" class="sr-only"></span>
-      <h2 id="projects-heading">Public projects</h2>
+      <h2 id="projects-heading">Personal experiments</h2>
       <p>
-        Free tools, apps and experiments. Upcoming apps are marked clearly.
-        Support and privacy pages for App Store listings live on this site.
+        A noncommercial collection for learning and everyday life. Each project
+        has a page here and notes in the experiments repository. Support and
+        privacy pages for published apps remain available on this site.
       </p>
     </div>
 
-    <div class="card-grid card-grid--3">
-      {
-        experiments.map((item) => (
-          <ExperimentCard
-            title={item.title}
-            kicker={item.kicker}
-            description={item.description}
-            href={item.href}
-            cta={item.cta}
-            appStoreUrl={item.appStoreUrl}
-            appStoreLabel={item.appStoreLabel}
-            icon={item.icon}
-            iconAlt={item.iconAlt}
-          />
-        ))
-      }
-    </div>
+    <nav class="project-jumps" aria-label="Project groups">
+      <a href="#available">Available to try</a>
+      <a href="#in-development">In development</a>
+      <a href={collection.notes}>All project notes ↗</a>
+    </nav>
+
+    {groups.map((group) => (
+      <section class="project-group" id={group.id} aria-labelledby={`${group.id}-heading`}>
+        <div class="project-group__header">
+          <h3 id={`${group.id}-heading`}>{group.title}</h3>
+          <p>{group.description}</p>
+        </div>
+        <div class:list={["card-grid", { "card-grid--3": group.status === "development" }]}>
+          {experiments.filter((project) => project.availability === group.status).map((project) => (
+            <ExperimentCard {...project} headingLevel={4} />
+          ))}
+        </div>
+      </section>
+    ))}
 
     <p class="section__note">
-      More free tools and experiments will appear here as they become ready. No
-      waitlists — useful projects go public when they can help someone.
+      Availability and source access differ by project. The project notes link
+      to the downloads, code and license that are available for each experiment.
     </p>
+  </section>
+
+  <section class="section container" aria-labelledby="collection-heading">
+    <div class="section__header">
+      <h2 id="collection-heading">Around the collection</h2>
+      <p>Follow an experiment from its public page to its notes, or explore the people and code behind it.</p>
+    </div>
+    <div class="collection-links">
+      <a href={collection.github}><strong>Experiments</strong><span>Project briefs, shared source and downloads ↗</span></a>
+      <a href={collection.repositories}><strong>Scaling Human on GitHub</strong><span>Browse the public repositories ↗</span></a>
+      <a href={person.github}><strong>{person.name}</strong><span>Personal profile and other interests ↗</span></a>
+    </div>
   </section>
 
   {/* Products section reserved until work authorization / intentional launch. */}

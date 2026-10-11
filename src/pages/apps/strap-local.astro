@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { person } from "../../data/site";
+import { appsBySlug, person } from "../../data/site";
 ---
 <BaseLayout title="Strap Local" description="Personal WHOOP 5.0 companion project: direct Bluetooth to iPhone and local storage. In development; compatibility validation pending." path="/apps/strap-local">
   <article class="container prose">
@@ -32,6 +32,6 @@ import { person } from "../../data/site";
     <h2>Rights concerns and takedown requests</h2>
     <p>We intend to honor takedown requests from Oura, WHOOP or authorized rights holders by promptly disabling or removing identified public materials while reviewing the concern. Please identify the affected URL or material, the right asserted and your authority to act.</p>
     <p><a href={`mailto:${person.email}?subject=Strap%20Local%20rights%20concern`}>Contact the project owner</a></p>
-    <div class="links-row"><a href="/apps/ring-local">Other wearable project</a><a href="/">All projects</a></div>
+    <div class="links-row"><a href={appsBySlug["strap-local"].briefUrl}>Project notes</a><a href="/apps/ring-local">Other wearable project</a><a href="/#projects">All projects</a></div>
   </article>
 </BaseLayout>

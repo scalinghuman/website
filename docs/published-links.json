@@ -1,0 +1,77 @@
+{
+  "site": "https://scalinghuman.ai",
+  "routes": [
+    "/apps/book-cricket.html",
+    "/apps/book-cricket/privacy.html",
+    "/apps/book-cricket/support.html",
+    "/apps/foodscanner.html",
+    "/apps/glasshole.html",
+    "/apps/qwen38-27b-eval.html",
+    "/apps/ring-local.html",
+    "/apps/rt-library.html",
+    "/apps/rt-library/privacy.html",
+    "/apps/rt-library/support.html",
+    "/apps/strap-local.html",
+    "/apps/streaming-devices-kids-meal-mode.html",
+    "/contact.html",
+    "/index.html",
+    "/privacy.html",
+    "/support.html"
+  ],
+  "aliases": [
+    "/",
+    "/apps/book-cricket",
+    "/apps/book-cricket/privacy",
+    "/apps/book-cricket/support",
+    "/apps/foodscanner",
+    "/apps/glasshole",
+    "/apps/qwen38-27b-eval",
+    "/apps/ring-local",
+    "/apps/rt-library",
+    "/apps/rt-library/privacy",
+    "/apps/rt-library/support",
+    "/apps/strap-local",
+    "/apps/streaming-devices-kids-meal-mode"
+  ],
+  "anchors": {
+    "/index.html": [
+      "experiments",
+      "projects",
+      "projects-heading",
+      "work"
+    ],
+    "/contact.html": [
+      "app-support-heading"
+    ],
+    "/apps/book-cricket.html": [
+      "book-cricket-video",
+      "books-title",
+      "gallery-title",
+      "iphone-title",
+      "modes-title",
+      "previews-title",
+      "questions-title",
+      "ritual-title",
+      "walkthrough",
+      "walkthrough-title"
+    ]
+  },
+  "downloads": [
+    "/downloads/KidsMealMode-firetv-debug.apk"
+  ],
+  "publishedExternal": [
+    "https://apps.apple.com/us/app/food-scanner-ai-overlay/id6790629113",
+    "https://apps.apple.com/us/app/glasshole-ai-for-google-glass/id6784266697",
+    "https://github.com/scalinghuman/experiments",
+    "https://github.com/scalinghuman/experiments/blob/main/docs/glass/GLASS_INSTALL_GUIDE.md",
+    "https://github.com/scalinghuman/experiments/releases/download/glass-companions-v1.0.0/foodscanner-glass-companion-v1.0.0.apk",
+    "https://github.com/scalinghuman/experiments/releases/download/glass-companions-v1.0.0/glasshole-glass-companion-v1.0.0.apk",
+    "https://github.com/scalinghuman/experiments/releases/tag/glass-companions-v1.0.0",
+    "https://scalinghuman.github.io/experiments/apps/qwen38-27b-eval",
+    "https://scalinghuman.github.io/experiments/apps/qwen38-27b-eval/mario/",
+    "https://scalinghuman.github.io/experiments/apps/qwen38-27b-eval/mario/index.html",
+    "https://scalinghuman.github.io/experiments/assets/qwen38-27b-eval/qwen-local-mario-demo-poster.png",
+    "https://scalinghuman.github.io/experiments/assets/qwen38-27b-eval/qwen-local-mario-demo.mp4",
+    "https://scalinghuman.github.io/experiments/assets/qwen38-27b-eval/super-mario-web-source.zip"
+  ]
+}

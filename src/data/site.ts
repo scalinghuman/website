@@ -1,6 +1,6 @@
 /**
  * Site content config — swap featured lists later without redesign.
- * Voice: free public projects under a brand name — not “founder / company operator.”
+ * Voice: personal, noncommercial experiments under a shared name.
  * When products go public (after proper work authorization), populate `products`.
  */
 
@@ -14,14 +14,26 @@ export const taglineAccessible =
 export const person = {
   name: "Srikantha Ballani",
   email: "srikantha.ballani@gmail.com",
-  github: "https://github.com/scalinghuman/experiments",
-  githubLabel: "github.com/scalinghuman/experiments",
+  github: "https://github.com/c0smicdirt",
+  githubLabel: "github.com/c0smicdirt",
   linkedin: "https://www.linkedin.com/in/srikanthab",
   x: "https://x.com/c0smicdirt",
   xLabel: "@c0smicdirt",
 } as const;
 
+export const collection = {
+  github: "https://github.com/scalinghuman/experiments",
+  notes: "https://github.com/scalinghuman/experiments/tree/main/docs/projects",
+  organization: "https://github.com/scalinghuman",
+  repositories: "https://github.com/orgs/scalinghuman/repositories",
+  websiteSource: "https://github.com/scalinghuman/website",
+} as const;
+
 export type Experiment = {
+  /** Stable page identifier, independent of card order. */
+  slug: string;
+  availability: "available" | "development";
+  briefUrl: string;
   title: string;
   kicker: string;
   description: string;
@@ -38,6 +50,9 @@ export type Experiment = {
 /** Featured free experiments only (not RT Library, not future products). */
 export const experiments: Experiment[] = [
   {
+    slug: "foodscanner",
+    availability: "available",
+    briefUrl: `${collection.github}/blob/main/docs/projects/foodscanner.md`,
     title: "Food Scanner",
     kicker: "iPhone · App Store",
     description:
@@ -50,6 +65,9 @@ export const experiments: Experiment[] = [
     iconAlt: "Food Scanner app icon",
   },
   {
+    slug: "glasshole",
+    availability: "available",
+    briefUrl: `${collection.github}/blob/main/docs/projects/glasshole.md`,
     title: "Glasshole AI",
     kicker: "iPhone · App Store",
     description:
@@ -63,16 +81,22 @@ export const experiments: Experiment[] = [
     iconAlt: "Glasshole AI app icon",
   },
   {
+    slug: "streaming-devices-kids-meal-mode",
+    availability: "available",
+    briefUrl: `${collection.github}/blob/main/docs/projects/kids-meal-mode.md`,
     title: "Kids Meal Mode",
     kicker: "Fire TV · Android TV · Sideload",
     description:
-      "Timed bite prompts and parent PIN gates so children keep eating during screen time. Built for Fire TV and other Android TV streaming devices; private sideload (not on App Store).",
+      "Timed bite prompts and parent PIN gates for family screen time. Built for Fire TV and other Android TV devices; a free APK is available to sideload, with source maintained privately.",
     href: "/apps/streaming-devices-kids-meal-mode",
     cta: "Details",
     icon: "/assets/apps/kids-meal-mode.png",
     iconAlt: "Kids Meal Mode app icon",
   },
   {
+    slug: "qwen38-27b-eval",
+    availability: "available",
+    briefUrl: `${collection.github}/blob/main/docs/projects/local-ai-game.md`,
     title: "Build Super Mario Web Edition for $0",
     kicker: "Local AI · Offline · Browser game",
     description:
@@ -84,6 +108,9 @@ export const experiments: Experiment[] = [
   },
 
   {
+    slug: "book-cricket",
+    availability: "development",
+    briefUrl: `${collection.github}/blob/main/docs/projects/book-cricket.md`,
     title: "Book Cricket",
     kicker: "iPhone Duo · iPhone · Coming soon",
     description:
@@ -94,6 +121,9 @@ export const experiments: Experiment[] = [
     iconAlt: "Book Cricket: cricket ball, stumps and a book",
   },
   {
+    slug: "ring-local",
+    availability: "development",
+    briefUrl: `${collection.github}/blob/main/docs/projects/ring-local.md`,
     title: "Ring Local",
     kicker: "iPhone · Personal use · In development",
     description: "A personal companion experiment for Oura Ring 4: direct Bluetooth to iPhone, local storage and no required cloud relay. Hardware validation pending.",
@@ -101,6 +131,9 @@ export const experiments: Experiment[] = [
     cta: "Project scope & status",
   },
   {
+    slug: "strap-local",
+    availability: "development",
+    briefUrl: `${collection.github}/blob/main/docs/projects/strap-local.md`,
     title: "Strap Local",
     kicker: "iPhone · Personal use · In development",
     description: "A personal companion experiment for WHOOP 5.0: direct Bluetooth to iPhone, local storage and no required cloud relay. Hardware validation pending.",
@@ -110,13 +143,9 @@ export const experiments: Experiment[] = [
 ];
 
 /** Lookup by page path segment for app detail pages */
-export const appsBySlug = {
-  foodscanner: experiments[0],
-  glasshole: experiments[1],
-  "streaming-devices-kids-meal-mode": experiments[2],
-  "qwen38-27b-eval": experiments[3],
-  "book-cricket": experiments[4],
-} as const;
+export const appsBySlug: Record<string, Experiment> = Object.fromEntries(
+  experiments.map((project) => [project.slug, project]),
+);
 
 /** Official Apple badge (marketing guidelines asset). */
 export const appStoreBadge = {

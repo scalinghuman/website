@@ -7,6 +7,8 @@ interface Props {
   description: string;
   href: string;
   cta?: string;
+  briefUrl?: string;
+  headingLevel?: 3 | 4;
   appStoreUrl?: string;
   appStoreLabel?: string;
   icon?: string;
@@ -20,9 +22,12 @@ const {
   href,
   cta = "Details",
   appStoreUrl,
+  briefUrl,
+  headingLevel = 3,
   icon,
   iconAlt = "",
 } = Astro.props;
+const Heading = headingLevel === 4 ? "h4" : "h3";
 ---
 
 <article class="card card--static">
@@ -41,9 +46,9 @@ const {
     }
     <div class="card__top-text">
       <p class="card__kicker">{kicker}</p>
-      <h3 class="card__title">
+      <Heading class="card__title">
         <a class="card__title-link" href={href}>{title}</a>
-      </h3>
+      </Heading>
     </div>
   </div>
   <p class="card__body">{description}</p>
@@ -68,5 +73,6 @@ const {
       )
     }
     <a class="card__cta" href={href}>{cta} →</a>
+    {briefUrl && <a class="card__notes" href={briefUrl}>Project notes ↗</a>}
   </div>
 </article>
