@@ -1,11 +1,22 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { companionApps } from "../data/site";
+import ProjectNavigation from "../components/ProjectNavigation.astro";
+import { appsBySlug, collection, companionApps, person } from "../data/site";
+
+const projectHelp = [
+  { title: appsBySlug.foodscanner.title, href: "#foodscanner", detail: "iPhone photo analysis and optional Google Glass setup." },
+  { title: appsBySlug.glasshole.title, href: "#glasshole", detail: "iPhone sessions, AI providers and optional Google Glass setup." },
+  { title: appsBySlug["streaming-devices-kids-meal-mode"].title, href: "/apps/streaming-devices-kids-meal-mode#compatibility", detail: "Fire TV / Android TV installation and streaming-app compatibility." },
+  { title: "Local AI game experiment", href: "/apps/qwen38-27b-eval#play", detail: "Browser controls, playable game and source download." },
+  { title: appsBySlug["book-cricket"].title, href: "/apps/book-cricket/support", detail: "In development. Preview the gameplay guide and nearby-match help." },
+  { title: appsBySlug["ring-local"].title, href: "/apps/ring-local#validation", detail: "Project setup. No downloadable app or verified device connection yet." },
+  { title: appsBySlug["strap-local"].title, href: "/apps/strap-local#validation", detail: "Project setup. No downloadable app or verified device connection yet." },
+];
 ---
 
 <BaseLayout
   title="Support"
-  description="Support for Food Scanner, Glasshole, and companion apps from Scaling Human."
+  description="Help with Scaling Human apps and personal experiments: project guides, iPhone and Google Glass setup, compatibility and contact details."
   path="/support.html"
 >
   <article class="container prose">
@@ -13,33 +24,36 @@ import { companionApps } from "../data/site";
       <p class="page-header__kicker">Help</p>
       <h1 class="page-header__title">Support</h1>
       <p class="page-header__lead">
-        For help with Food Scanner, Glasshole, or the companion apps, contact the
-        channels below.
+        Help with the apps and personal experiments in the collection. Choose
+        your project below, or email the project owner with a question.
       </p>
+      <div class="page-header__actions">
+        <a class="btn btn--primary" href={`mailto:${person.email}?subject=Scaling%20Human%20support`}>Email for help</a>
+        <a href="/contact.html">Contact details</a>
+      </div>
     </header>
 
-    <p class="updated">Last updated: July 29, 2026</p>
+    <p class="updated">Last updated: October 11, 2026</p>
 
-    <ul>
-      <li>
-        Email:
-        <a href="mailto:srikantha.ballani@gmail.com"
-          >srikantha.ballani@gmail.com</a
-        >
-      </li>
-      <li>
-        GitHub:
-        <a
-          href="https://github.com/scalinghuman/experiments"
-          rel="noopener noreferrer"
-          >https://github.com/scalinghuman/experiments</a
-        >
-      </li>
+    <ProjectNavigation links={[
+      { label: "Choose a project", href: "#project-help" },
+      { label: "iPhone apps", href: "#iphone-apps" },
+      { label: "Google Glass setup", href: "#glass-setup" },
+      { label: "Send a question", href: "#request-help" },
+    ]} />
+
+    <h2 id="project-help">Choose your project</h2>
+    <ul class="support-projects">
+      {projectHelp.map((project) => (
+        <li><a href={project.href}><strong>{project.title}</strong><span>{project.detail}</span></a></li>
+      ))}
     </ul>
+    <p>The separate co-op utility has its own <a href="/apps/rt-library/support">RT Library support page</a>.</p>
 
-    <h2>Compatibility</h2>
+    <h2 id="iphone-apps">Food Scanner and Glasshole on iPhone</h2>
     <p>
-      The iOS apps are iPhone apps and require iOS 26.0 or later.
+      Both apps require iOS 26.0 or later. You can use either app entirely from
+      your iPhone; companion hardware is optional.
     </p>
     <p>
       Glasshole supports Apple Intelligence on compatible iPhone models. Other
@@ -48,7 +62,7 @@ import { companionApps } from "../data/site";
       supported iPhones without an API key.
     </p>
 
-    <h2>Food Scanner</h2>
+    <h3 id="foodscanner">Food Scanner</h3>
     <p>
       Food Scanner can be used without companion hardware by choosing a food
       photo from iPhone or taking a new iPhone camera photo. The optional Google
@@ -65,7 +79,7 @@ import { companionApps } from "../data/site";
       advice.
     </p>
 
-    <h2>Glasshole</h2>
+    <h3 id="glasshole">Glasshole AI</h3>
     <p>
       Glasshole can be used without companion hardware by tapping the microphone
       button in the iOS app. The optional Google Glass XE companion APK can start
@@ -82,9 +96,10 @@ import { companionApps } from "../data/site";
       compliance with local laws and regulations where you use it.
     </p>
 
-    <h2>Common Setup (website → GitHub)</h2>
+    <h2 id="glass-setup">Optional Google Glass XE setup</h2>
+    <p>Follow these steps only if you want to use a Google Glass XE companion. For standalone iPhone use, install the app and choose your processing mode.</p>
     <ol>
-      <li>Install the iOS app from the App Store.</li>
+      <li>Install <a href={appsBySlug.foodscanner.appStoreUrl}>Food Scanner</a> or <a href={appsBySlug.glasshole.appStoreUrl}>Glasshole AI</a> from the App Store.</li>
       <li>
         From the app page on this site (or the links below), download the
         matching companion APK:
@@ -110,11 +125,57 @@ import { companionApps } from "../data/site";
       </li>
     </ol>
 
+    <h2 id="request-help">Send a question or report a problem</h2>
+    <p>Email <a href={`mailto:${person.email}?subject=Scaling%20Human%20support`}>{person.email}</a>. These are personal projects maintained by {person.name}. A useful report includes:</p>
+    <ul>
+      <li>The app or project name and app version, if available.</li>
+      <li>Your device model and operating-system version.</li>
+      <li>What you expected, what happened, and the steps or error message that led to it.</li>
+    </ul>
+    <p>Leave out API keys, account credentials, private recordings and health data. A screenshot with personal information removed can help.</p>
+    <p>You can also browse the <a href={collection.notes} rel="noopener noreferrer">project notes on GitHub</a> for scope, status and known limitations. Each project page links its own privacy and use information.</p>
+
     <div class="links-row">
-      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/privacy.html">Food Scanner &amp; Glasshole privacy</a>
       <a href="/apps/foodscanner">Food Scanner</a>
       <a href="/apps/glasshole">Glasshole AI</a>
-      <a href="/">Home</a>
+      <a href="/#projects">All projects</a>
     </div>
   </article>
 </BaseLayout>
+
+<style>
+  .updated { color: var(--text-secondary); }
+  .support-projects {
+    display: grid;
+    gap: 0.75rem;
+    padding: 0;
+    margin: 1.25rem 0;
+    list-style: none;
+  }
+
+  .support-projects li { margin: 0; min-width: 0; }
+
+  .support-projects a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    height: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-elevated);
+    text-decoration: none;
+  }
+
+  .support-projects a:hover {
+    border-color: var(--border-strong);
+    background: var(--bg-subtle);
+  }
+
+  .support-projects span { color: var(--text-secondary); font-size: 0.875rem; }
+
+  @media (min-width: 640px) {
+    .support-projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+</style>

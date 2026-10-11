@@ -10,7 +10,7 @@ const rows = [
     external: false,
   },
   {
-    label: "GitHub",
+    label: "GitHub profile",
     href: person.github,
     value: person.githubLabel,
     external: true,
@@ -32,7 +32,7 @@ const rows = [
 
 <BaseLayout
   title="Contact"
-  description={`Contact ${person.name} for support on free Scaling Human apps, or a general note.`}
+  description={`Contact ${person.name} about Scaling Human apps, personal experiments, feedback or rights concerns.`}
   path="/contact.html"
 >
   <article class="container">
@@ -40,7 +40,8 @@ const rows = [
       <p class="page-header__kicker">Get in touch</p>
       <h1 class="page-header__title">Contact</h1>
       <p class="page-header__lead">
-        Questions about the free apps, or a note for {person.name}.
+        A question about a project, feedback on an app, or an idea to share
+        with {person.name}.
       </p>
     </header>
 
@@ -55,7 +56,7 @@ const rows = [
         />
         <div class="person-card__identity">
           <p class="person-card__name">{person.name}</p>
-          <p class="person-card__role">Scaling Human</p>
+          <p class="person-card__role">Personal projects · Scaling Human</p>
         </div>
       </div>
 
@@ -79,17 +80,38 @@ const rows = [
     </div>
 
     <section class="contact-aside" aria-labelledby="app-support-heading">
-      <h2 id="app-support-heading">App support</h2>
+      <h2 id="app-support-heading">App and project support</h2>
       <p>
-        For Food Scanner, Glasshole, and companion setup, use the support page.
-        Other projects link their own support and privacy information from their
-        project pages. General and rights concerns can be sent by email above.
+        Start with the support hub for setup guides, compatibility notes and help
+        for each project. When emailing about a problem, include the project name,
+        device and operating-system version, and a short description of what happened.
       </p>
       <div class="links-row">
-        <a href="/support.html">Support</a>
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/">Home</a>
+        <a class="btn btn--primary" href="/support.html">Find project help</a>
+        <a href="/#projects">All projects</a>
       </div>
+    </section>
+
+    <section class="contact-aside" aria-labelledby="rights-heading">
+      <h2 id="rights-heading">Rights concerns</h2>
+      <p>
+        For a concern about public material, email the affected URL, a brief
+        description of the concern and your authority to act. Individual project
+        pages include their own use and takedown notices.
+      </p>
+      <p><a href={`mailto:${person.email}?subject=Scaling%20Human%20rights%20concern`}>Email a rights concern</a></p>
     </section>
   </article>
 </BaseLayout>
+
+<style>
+  .person-card__role,
+  .contact-dl__label { color: var(--text-secondary); }
+  .contact-aside + .contact-aside { margin-top: 2.5rem; }
+  .contact-aside .links-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.25rem;
+  }
+</style>

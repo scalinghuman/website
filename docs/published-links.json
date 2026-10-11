@@ -48,7 +48,8 @@
     ],
     "/contact.html": [
       "app-support-heading",
-      "main-content"
+      "main-content",
+      "rights-heading"
     ],
     "/apps/book-cricket.html": [
       "book-cricket-video",
@@ -64,7 +65,13 @@
       "walkthrough-title"
     ],
     "/support.html": [
-      "main-content"
+      "foodscanner",
+      "glass-setup",
+      "glasshole",
+      "iphone-apps",
+      "main-content",
+      "project-help",
+      "request-help"
     ],
     "/privacy.html": [
       "main-content"
