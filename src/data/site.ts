@@ -93,6 +93,20 @@ export const experiments: Experiment[] = [
     icon: "/assets/apps/book-cricket/icon.png",
     iconAlt: "Book Cricket: cricket ball, stumps and a book",
   },
+  {
+    title: "Ring Local",
+    kicker: "iPhone · Personal use · In development",
+    description: "A personal companion experiment for Oura Ring 4: direct Bluetooth to iPhone, local storage and no required cloud relay. Hardware validation pending.",
+    href: "/apps/ring-local",
+    cta: "Project scope & status",
+  },
+  {
+    title: "Strap Local",
+    kicker: "iPhone · Personal use · In development",
+    description: "A personal companion experiment for WHOOP 5.0: direct Bluetooth to iPhone, local storage and no required cloud relay. Hardware validation pending.",
+    href: "/apps/strap-local",
+    cta: "Project scope & status",
+  },
 ];
 
 /** Lookup by page path segment for app detail pages */

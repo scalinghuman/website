@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { person } from "../../data/site";
+---
+<BaseLayout title="Ring Local" description="Personal Oura Ring 4 companion project: direct Bluetooth to iPhone and local storage. In development; compatibility validation pending." path="/apps/ring-local">
+  <article class="container prose">
+    <header class="page-header">
+      <p class="page-header__kicker">iPhone · Personal, noncommercial use · In development</p>
+      <h1 class="page-header__title">Ring Local</h1>
+      <p class="page-header__lead">Your wearable, connected directly to your nearby iPhone. A personal companion experiment for Oura Ring 4, with measurements stored locally.</p>
+    </header>
+    <p><strong>Status: project setup; hardware validation pending.</strong> No app download is available. Direct connectivity and metric accuracy have not yet been verified on the owner's device.</p>
+    <h2>A direct local connection</h2>
+    <p>The planned native iPhone app connects over Bluetooth Low Energy, keeps data on the phone and analyzes available measurements locally. Collection is designed to work without a vendor cloud API, subscription, cloud relay or required Mac.</p>
+    <ol>
+      <li>Connect directly to the wearable using the iPhone's Bluetooth.</li>
+      <li>Show live measurements where the device exposes them, with timestamps and freshness.</li>
+      <li>Reconnect when the phone returns to range and retrieve missed device history where supported.</li>
+      <li>Keep measurements and analysis on the iPhone; optional nearby-device viewing is a later milestone.</li>
+    </ol>
+    <p>Not every measurement is a continuous live stream. Background behavior depends on iOS, firmware and available device history. This webpage documents the project; it does not pair devices or receive health data.</p>
+    <h2>What must be proven first</h2>
+    <ul><li>Reliable pairing and authenticated data access on Oura Ring 4.</li><li>Repeatable synchronization without duplicates or silently missing data.</li><li>Reconnect and catch-up after range loss, phone locking and app interruption.</li><li>Correct units and timestamps, with unsupported metrics clearly identified.</li></ul>
+    <h2>Starting points and limitations</h2>
+    <p>Open Health / open_oura (MIT) is the initial candidate. Ring 4 sync and live-HR bugs are open upstream; validate the actual ring firmware. Already-paired rings require an authentication-key/bond strategy. A fresh-pairing reset can erase unsynced data and is not authorized by this setup request. Do not depend on proprietary model files. HRV, SpO2, steps and vendor-equivalent scores remain unverified.</p>
+    <p><a href="https://github.com/Th0rgal/open_health" rel="noopener noreferrer">App candidate</a> · <a href="https://github.com/Th0rgal/open_oura" rel="noopener noreferrer">Protocol / analytics candidate</a>. Upstream licenses and attribution remain intact.</p>
+    <h2>Privacy and intended use</h2>
+    <p>This is a personal, noncommercial experiment with owned hardware. No sale, public app release or hosted health-data service is planned. The intended app stores data locally, protects authentication keys and provides a delete-data control. These app behaviors are requirements awaiting implementation.</p>
+    <h2>Independence and responsibility</h2>
+    <p>Independent and unofficial. Not affiliated with, endorsed by, sponsored by or supported by Oura Health Oy or WHOOP, Inc. Names identify compatible hardware only; their respective owners retain their trademarks.</p>
+    <p>Experimental wellness information, not a medical device or a substitute for professional care. Provided as-is without warranties; liability is disclaimed to the extent permitted by applicable law. Compatibility, accuracy and freedom from third-party claims are not guaranteed. Personal use and these notices do not override applicable law, agreements or third-party licenses.</p>
+    <h2>Rights concerns and takedown requests</h2>
+    <p>We intend to honor takedown requests from Oura, WHOOP or authorized rights holders by promptly disabling or removing identified public materials while reviewing the concern. Please identify the affected URL or material, the right asserted and your authority to act.</p>
+    <p><a href={`mailto:${person.email}?subject=Ring%20Local%20rights%20concern`}>Contact the project owner</a></p>
+    <div class="links-row"><a href="/apps/strap-local">Other wearable project</a><a href="/">All projects</a></div>
+  </article>
+</BaseLayout>
