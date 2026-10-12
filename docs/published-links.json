@@ -115,7 +115,10 @@
       "validation"
     ],
     "/apps/rt-library.html": [
-      "main-content"
+      "main-content",
+      "screenshots",
+      "getting-started",
+      "current-release"
     ],
     "/apps/book-cricket/support.html": [
       "main-content"
@@ -146,6 +149,7 @@
     "https://scalinghuman.github.io/experiments/apps/qwen38-27b-eval/mario/index.html",
     "https://scalinghuman.github.io/experiments/assets/qwen38-27b-eval/qwen-local-mario-demo-poster.png",
     "https://scalinghuman.github.io/experiments/assets/qwen38-27b-eval/qwen-local-mario-demo.mp4",
-    "https://scalinghuman.github.io/experiments/assets/qwen38-27b-eval/super-mario-web-source.zip"
+    "https://scalinghuman.github.io/experiments/assets/qwen38-27b-eval/super-mario-web-source.zip",
+    "https://apps.apple.com/us/app/rt-library/id6789365604"
   ]
 }

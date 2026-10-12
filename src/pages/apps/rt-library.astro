@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { appsBySlug } from "../../data/site";
+import ProjectNavigation from "../../components/ProjectNavigation.astro";
+import { appStoreBadge, appsBySlug } from "../../data/site";
 const app = appsBySlug["rt-library"];
 ---
 
@@ -12,24 +13,69 @@ const app = appsBySlug["rt-library"];
 >
   <article class="container prose">
     <header class="page-header">
-      <p class="page-header__kicker">{app.kicker}</p>
-      <h1 class="page-header__title">{app.title}</h1>
+      <div class="page-header__brand">
+        <img class="page-header__icon" src={app.icon} width="72" height="72" alt={app.iconAlt} />
+        <div>
+          <p class="page-header__kicker">{app.kicker}</p>
+          <h1 class="page-header__title">{app.title}</h1>
+        </div>
+      </div>
       <p class="page-header__lead">
         RT Library is a simple co-op shareholder-built catalog for the shared
         library room at Riviera Towers West New York, a private co-op building.
       </p>
       <div class="page-header__actions">
-        <a class="btn btn--secondary" href={app.briefUrl}>Project notes ↗</a>
+        <a class="store-badge-link" href={app.appStoreUrl} rel="noopener noreferrer" aria-label={`RT Library: ${appStoreBadge.alt}`}>
+          <img src={appStoreBadge.src} width={appStoreBadge.width} height={appStoreBadge.height} alt={appStoreBadge.alt} />
+        </a>
+        <a href={app.briefUrl}>Project notes ↗</a>
         <a href="/apps/rt-library/support">Get help</a>
       </div>
     </header>
+
+    <ProjectNavigation links={[
+      { label: "Screenshots", href: "#screenshots" },
+      { label: "How to use", href: "#getting-started" },
+      { label: "Current release", href: "#current-release" },
+      { label: "Privacy", href: "/apps/rt-library/privacy" },
+      { label: "Support", href: "/apps/rt-library/support" },
+    ]} />
 
     <p>
       The app helps co-op shareholders search and browse the building library by
       title, author, and genre without physically scanning every shelf.
     </p>
 
-    <h2>Current Release</h2>
+    <p>Free on the App Store for iPhone and iPad. Requires iOS 17 or iPadOS 17 or later. Built for the Riviera Towers community library.</p>
+
+    <section aria-labelledby="screenshots">
+      <h2 id="screenshots">Inside the app</h2>
+      <p>Published iPhone screenshots from version 1.0. Select an image to view it at full size.</p>
+      <div class="rt-gallery">
+        <figure>
+          <a href="/assets/apps/rt-library/iphone-1.jpg" aria-label="View RT Library search screenshot at full size"><img src="/assets/apps/rt-library/iphone-1.jpg" width="444" height="960" alt="RT Library search field and catalog of 653 book candidates across 50 genres" loading="lazy" /></a>
+          <figcaption>Search by title, author or genre.</figcaption>
+        </figure>
+        <figure>
+          <a href="/assets/apps/rt-library/iphone-2.jpg" aria-label="View RT Library genres screenshot at full size"><img src="/assets/apps/rt-library/iphone-2.jpg" width="444" height="960" alt="RT Library Genres tab listing subjects including biography, cookery and fiction" loading="lazy" /></a>
+          <figcaption>Browse the library by subject.</figcaption>
+        </figure>
+        <figure>
+          <a href="/assets/apps/rt-library/iphone-3.jpg" aria-label="View RT Library book detail screenshot at full size"><img src="/assets/apps/rt-library/iphone-3.jpg" width="444" height="960" alt="Book detail showing author, catalog status, OCR confidence and a notice that shared availability updates are coming soon" loading="lazy" /></a>
+          <figcaption>Inspect book details and catalog confidence.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <h2 id="getting-started">Find a book</h2>
+    <ol>
+      <li>Install RT Library from the App Store and open the Search tab.</li>
+      <li>Enter a title, author or genre, or use Genres to browse by subject.</li>
+      <li>Open a book to review its details, metadata and OCR confidence where available.</li>
+      <li>Check the physical shelf before relying on a catalog entry. Shared availability updates are planned for a later release.</li>
+    </ol>
+
+    <h2 id="current-release">Current Release</h2>
     <ul>
       <li>iOS app for iPhone and iPad</li>
       <li>Search by title, author, or genre</li>
@@ -72,3 +118,11 @@ const app = appsBySlug["rt-library"];
     </div>
   </article>
 </BaseLayout>
+
+<style>
+  .rt-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0 2rem; }
+  .rt-gallery figure { margin: 0; min-width: 0; }
+  .rt-gallery img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: var(--radius-sm); }
+  .rt-gallery figcaption { margin-top: 0.75rem; color: var(--text-secondary); font-size: 0.875rem; line-height: 1.5; }
+  @media (max-width: 520px) { .rt-gallery { grid-template-columns: 1fr; max-width: 18rem; margin-inline: auto; gap: 1.75rem; } }
+</style>
