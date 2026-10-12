@@ -118,7 +118,9 @@
       "main-content",
       "screenshots",
       "getting-started",
-      "current-release"
+      "current-release",
+      "catalog",
+      "questions"
     ],
     "/apps/book-cricket/support.html": [
       "main-content"

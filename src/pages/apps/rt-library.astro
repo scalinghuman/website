@@ -21,8 +21,9 @@ const app = appsBySlug["rt-library"];
         </div>
       </div>
       <p class="page-header__lead">
-        RT Library is a simple co-op shareholder-built catalog for the shared
-        library room at Riviera Towers West New York, a private co-op building.
+        Find your next read in the Riviera Towers community library.
+        Search the shelf-photo catalog by title, author or genre on iPhone and iPad.
+        A personal contribution for shareholders at Riviera Towers West New York.
       </p>
       <div class="page-header__actions">
         <a class="store-badge-link" href={app.appStoreUrl} rel="noopener noreferrer" aria-label={`RT Library: ${appStoreBadge.alt}`}>
@@ -36,7 +37,9 @@ const app = appsBySlug["rt-library"];
     <ProjectNavigation links={[
       { label: "Screenshots", href: "#screenshots" },
       { label: "How to use", href: "#getting-started" },
+      { label: "Catalog and confidence", href: "#catalog" },
       { label: "Current release", href: "#current-release" },
+      { label: "Questions", href: "#questions" },
       { label: "Privacy", href: "/apps/rt-library/privacy" },
       { label: "Support", href: "/apps/rt-library/support" },
     ]} />
@@ -48,9 +51,25 @@ const app = appsBySlug["rt-library"];
 
     <p>Free on the App Store for iPhone and iPad. Requires iOS 17 or iPadOS 17 or later. Built for the Riviera Towers community library.</p>
 
+    <h2 id="catalog">From shelves to a searchable catalog</h2>
+    <p>
+      The catalog starts with photographs of the library shelves. OCR reads the
+      visible book text, and metadata lookup helps match titles and authors.
+      Version 1.0 includes 653 book candidates across 50 genres, with both verified
+      and unverified entries. It is a useful starting point for finding a book,
+      and a catalog the community can help improve.
+    </p>
+    <p>
+      Search runs on your device against the bundled catalog. Book covers and
+      public metadata may need a network connection. No account is required in
+      version 1.0. See the <a href="/apps/rt-library/privacy">privacy policy</a>
+      for the current data and permissions details.
+    </p>
+
     <section aria-labelledby="screenshots">
       <h2 id="screenshots">Inside the app</h2>
       <p>Published iPhone screenshots from version 1.0. Select an image to view it at full size.</p>
+      <h3>iPhone</h3>
       <div class="rt-gallery">
         <figure>
           <a href="/assets/apps/rt-library/iphone-1.jpg" aria-label="View RT Library search screenshot at full size"><img src="/assets/apps/rt-library/iphone-1.jpg" width="444" height="960" alt="RT Library search field and catalog of 653 book candidates across 50 genres" loading="lazy" /></a>
@@ -64,6 +83,13 @@ const app = appsBySlug["rt-library"];
           <a href="/assets/apps/rt-library/iphone-3.jpg" aria-label="View RT Library book detail screenshot at full size"><img src="/assets/apps/rt-library/iphone-3.jpg" width="444" height="960" alt="Book detail showing author, catalog status, OCR confidence and a notice that shared availability updates are coming soon" loading="lazy" /></a>
           <figcaption>Inspect book details and catalog confidence.</figcaption>
         </figure>
+      </div>
+      <h3>iPad</h3>
+      <p>The same catalog on a larger display, with room to browse genres and review book details.</p>
+      <div class="rt-gallery rt-gallery--ipad">
+        <figure><a href="/assets/apps/rt-library/ipad-1.jpg" aria-label="View iPad screenshot 1 at full size"><img src="/assets/apps/rt-library/ipad-1.jpg" width="720" height="960" alt="RT Library iPad catalog search with a list of genres" loading="lazy" /></a><figcaption>Search the catalog on iPad.</figcaption></figure>
+        <figure><a href="/assets/apps/rt-library/ipad-2.jpg" aria-label="View iPad screenshot 2 at full size"><img src="/assets/apps/rt-library/ipad-2.jpg" width="720" height="960" alt="RT Library iPad genre detail listing books" loading="lazy" /></a><figcaption>Explore books within a genre.</figcaption></figure>
+        <figure><a href="/assets/apps/rt-library/ipad-3.jpg" aria-label="View iPad screenshot 3 at full size"><img src="/assets/apps/rt-library/ipad-3.jpg" width="720" height="960" alt="RT Library iPad book detail view" loading="lazy" /></a><figcaption>Review a book and its catalog details.</figcaption></figure>
       </div>
     </section>
 
@@ -91,6 +117,19 @@ const app = appsBySlug["rt-library"];
       <li>653 OCR-derived book candidates across 50 genres in version 1.0</li>
     </ul>
 
+    <h2>Catalog confidence and availability</h2>
+    <p>
+      OCR confidence describes the text-recognition result. Metadata confidence,
+      when shown, describes the catalog match. These are useful clues when an
+      entry looks incomplete or a title seems wrong; they do not guarantee that
+      the book is currently on the shelf.
+    </p>
+    <p>
+      Version 1.0 is a browsing and search tool. It does not sync borrowing,
+      returns or availability changes between shareholders. Check the shelf for
+      the current situation, even when a book detail shows an available status.
+    </p>
+
     <h2>Coming Soon</h2>
     <ul>
       <li>Co-op shareholder book request submissions</li>
@@ -103,6 +142,16 @@ const app = appsBySlug["rt-library"];
       version 1.0 because shared storage for co-op shareholders is planned for a
       later release.
     </p>
+
+    <h2 id="questions">Common questions</h2>
+    <h3>Is this a public library service?</h3>
+    <p>No. The app is a shareholder-built catalog for the shared library at Riviera Towers West New York, a private co-op building. The App Store download is free, but the catalog is specific to that community.</p>
+    <h3>Can I request or reserve a book?</h3>
+    <p>Requests and shared availability updates are planned for a later release. Version 1.0 does not submit or sync requests.</p>
+    <h3>What if a title or author is wrong?</h3>
+    <p>OCR can misread shelf text, and metadata can match the wrong edition or book. Send the title or author shown, what needs correcting and your app version through <a href="/apps/rt-library/support">RT Library support</a>.</p>
+    <h3>Can I use it without an internet connection?</h3>
+    <p>The bundled catalog and on-device search do not need a server. Public covers and metadata links may need an internet connection.</p>
 
     <h2>Notes</h2>
     <p>
