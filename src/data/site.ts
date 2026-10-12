@@ -16,7 +16,7 @@ export const person = {
   email: "srikantha.ballani@gmail.com",
   github: "https://github.com/c0smicdirt",
   githubLabel: "github.com/c0smicdirt",
-  linkedin: "https://www.linkedin.com/in/srikanthab",
+  linkedin: "https://www.linkedin.com/in/c0smicdirt",
   x: "https://x.com/c0smicdirt",
   xLabel: "@c0smicdirt",
 } as const;
@@ -47,7 +47,7 @@ export type Experiment = {
   iconAlt?: string;
 };
 
-/** Featured free experiments only (not RT Library, not future products). */
+/** Featured personal projects and community contributions. Future products remain separate. */
 export const experiments: Experiment[] = [
   {
     slug: "foodscanner",
@@ -107,6 +107,16 @@ export const experiments: Experiment[] = [
     iconAlt: "Super Mario-style browser game created during a local AI evaluation",
   },
 
+  {
+    slug: "rt-library",
+    availability: "available",
+    briefUrl: `${collection.github}/blob/main/docs/projects/rt-library.md`,
+    title: "RT Library",
+    kicker: "iPhone · iPad · Community library",
+    description: "A searchable book catalog for the shared library at Riviera Towers. Built from shelf photos using OCR, with browsing by title, author and genre for co-op shareholders.",
+    href: "/apps/rt-library",
+    cta: "Details",
+  },
   {
     slug: "book-cricket",
     availability: "development",

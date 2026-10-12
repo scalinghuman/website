@@ -5,14 +5,14 @@ import Tagline from "../components/Tagline.astro";
 import { collection, experiments, person, tagline } from "../data/site";
 
 const groups = [
-  { status: "available", id: "available", title: "Available to try", description: "Free App Store apps, a family sideload build and a playable browser experiment." },
+  { status: "available", id: "available", title: "Available to try", description: "Apps, community tools, a family sideload build and a playable browser experiment. Each page describes who the project is for and how to use it." },
   { status: "development", id: "in-development", title: "In development", description: "Project pages share the scope and progress. App downloads are not available yet." },
 ] as const;
 ---
 
 <BaseLayout
   title="Scaling Human"
-  description={`${tagline}. Personal, noncommercial experiments with hardware, AI, apps, games and local computing.`}
+  description={`${tagline}. Personal, noncommercial projects and community contributions with hardware, AI, apps, games and local computing.`}
   path="/"
 >
   <section class="hero container">
@@ -29,7 +29,7 @@ const groups = [
       <Tagline />
     </p>
     <p class="hero__lead">
-      Personal experiments with hardware, AI, apps, games and local computing.
+      Personal projects and community contributions with hardware, AI, apps, games and local computing.
       Built to learn how machines can extend human perception, memory, judgment
       and capability. Apps and notes are shared for free as they become useful.
     </p>
@@ -53,9 +53,9 @@ const groups = [
     <!-- #work kept for older in-page links -->
     <div class="section__header" id="work">
       <span id="experiments" class="sr-only"></span>
-      <h2 id="projects-heading">Personal experiments</h2>
+      <h2 id="projects-heading">Projects and contributions</h2>
       <p>
-        A noncommercial collection for learning and everyday life. Each project
+        A noncommercial collection for learning, everyday life and the community. Each project
         has a page here and notes in the experiments repository. Support and
         privacy pages for published apps remain available on this site.
       </p>
@@ -83,7 +83,7 @@ const groups = [
 
     <p class="section__note">
       Availability and source access differ by project. The project notes link
-      to the downloads, code and license that are available for each experiment.
+      to the downloads, code and license that are available for each project.
     </p>
   </section>
 

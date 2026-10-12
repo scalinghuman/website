@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="Privacy Policy"
-  description="Privacy Policy for Food Scanner and Glasshole iOS apps from Scaling Human."
+  description="Privacy for Food Scanner, Glasshole and the Scaling Human website, with links to other project policies."
   path="/privacy.html"
 >
   <article class="container prose">
@@ -13,12 +13,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <h1 class="page-header__title">Privacy Policy</h1>
       <p class="page-header__lead">
         This policy covers the free Food Scanner and Glasshole iOS apps published
-        under the Scaling Human name. Those apps explore tools that extend human
-        perception and capability.
+        under the Scaling Human name and this website. Other projects have
+        their own privacy information linked below.
       </p>
     </header>
 
-    <p class="updated">Last updated: July 8, 2026</p>
+    <p class="updated">Last updated: October 11, 2026</p>
 
     <h2>Summary</h2>
     <p>
@@ -81,6 +81,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       sends activation and stop gestures and displays results from the iOS app.
     </p>
 
+    <h2>Local history and deletion</h2>
+    <p>
+      Both apps save history on your iPhone. Use the history controls to delete
+      individual results or clear saved history. Images you save to Photos remain
+      in your photo library until you delete them there. Deleting local history
+      does not delete copies already sent to a provider or saved elsewhere.
+    </p>
+
+    <h2>Choosing an AI provider</h2>
+    <p>
+      PocketPal mode uses the local endpoint configured in Settings. The default
+      is localhost on your iPhone. Ollama and custom endpoints can be on another
+      device on your network or on the internet. The destination you configure
+      determines where images or transcripts are processed.
+    </p>
+    <p>
+      External providers apply their own privacy and retention policies. Review
+      those policies before sending private images or conversations. Changing
+      the provider does not remove content already sent to an external service.
+    </p>
+
     <h2>API Keys</h2>
     <p>
       If you configure a third-party AI provider, API keys are stored in the iOS
@@ -91,10 +112,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p>
       The scalinghuman.ai website may use Cloudflare Web Analytics, a
       privacy-oriented product that does not use advertising cookies for
-      tracking. It provides aggregate visit metrics (for example page views and
-      country). This applies only to the website, not to the iOS apps described
+      tracking. It provides aggregate visit and performance metrics (for example page views and
+      country). <a href="https://developers.cloudflare.com/web-analytics/about/" rel="noopener noreferrer">Cloudflare documents how Web Analytics works</a>. This applies only to the website, not to the iOS apps described
       above.
     </p>
+
+    <h2>Other projects</h2>
+    <p>Privacy information is specific to each project:</p>
+    <ul>
+      <li><a href="/apps/rt-library/privacy">RT Library privacy</a></li>
+      <li><a href="/apps/book-cricket/privacy">Book Cricket privacy</a></li>
+      <li><a href="/apps/ring-local#privacy">Smart Ring Local privacy and project status</a></li>
+      <li><a href="/apps/strap-local#privacy">Smart Strap Local privacy and project status</a></li>
+      <li><a href="/apps/streaming-devices-kids-meal-mode#family-use">Kids Meal Mode family use and permissions</a></li>
+    </ul>
 
     <h2>Contact</h2>
     <p>For privacy questions or support, contact:</p>

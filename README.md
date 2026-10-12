@@ -62,7 +62,7 @@ Keep both forms reachable. The homepage preserves `#projects`, `#work` and
 | `/apps/book-cricket/support` | Book Cricket support |
 | `/apps/ring-local` | Smart Ring Local, in development |
 | `/apps/strap-local` | Smart Strap Local, in development |
-| `/apps/rt-library` | RT Library, a separate co-op utility |
+| `/apps/rt-library` | RT Library, a community library catalog |
 | `/apps/rt-library/privacy` | RT Library privacy |
 | `/apps/rt-library/support` | RT Library support |
 
