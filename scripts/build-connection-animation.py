@@ -69,11 +69,11 @@ def frame(t):
 
 frames=[frame(i/FPS) for i in range(90)]
 frames[-1].save(ROOT/'scalinghuman-connection-poster.png')
-frames[0].save(ROOT/'scalinghuman-connection.gif',save_all=True,append_images=frames[1:],duration=[67,67,66]*30,loop=0,optimize=True)
 ff=sys.argv[1]
 p=subprocess.Popen([ff,'-y','-loglevel','error','-f','rawvideo','-pix_fmt','rgb24','-s',f'{W}x{H}','-r',str(FPS),'-i','-','-an','-c:v','libx264','-pix_fmt','yuv420p','-movflags','+faststart',str(ROOT/'scalinghuman-connection.mp4')],stdin=subprocess.PIPE)
 for f in frames:p.stdin.write(f.tobytes())
 p.stdin.close();assert p.wait()==0
+subprocess.run([ff,'-y','-loglevel','error','-i',str(ROOT/'scalinghuman-connection.mp4'),'-filter_complex','fps=15,split[a][b];[a]palettegen[p];[b][p]paletteuse','-loop','0',str(ROOT/'scalinghuman-connection.gif')],check=True)
 
 logo=Image.new('RGB',(512,512),BG);d=ImageDraw.Draw(logo)
 d.line([(154,211),(358,301)],fill=(144,151,156),width=10)

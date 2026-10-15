@@ -15,6 +15,11 @@ Source access differs by project. The website and experiments collection do not
 imply that private app implementations are published or that all source has an
 unrestricted open-source license.
 
+## Brand resources
+
+[Logo and animation exports](resources/branding/scaling-human/) include multiple
+resolutions, transparent variants, usage notes and reproducible sources.
+
 ## Local development
 
 Requires Node.js 22.12 or later.

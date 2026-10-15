@@ -1,0 +1,169 @@
+{
+  "assets": [
+    {
+      "path": "animation/scalinghuman-connection-320x180.gif",
+      "bytes": 196950,
+      "sha256": "7f4924feacea5f3f7698a032543c5658b70b360d5270d1cf279450593b8a1b7f",
+      "width": 320,
+      "height": 180,
+      "duration_ms": 6000
+    },
+    {
+      "path": "animation/scalinghuman-connection-320x180.mp4",
+      "bytes": 26347,
+      "sha256": "0641c3766ecbfeb61e43c742831cc182542a8b6ec892b657a6fe4c0b40085c54"
+    },
+    {
+      "path": "animation/scalinghuman-connection-640x360.gif",
+      "bytes": 609153,
+      "sha256": "279b96274527fa102e526f51e6ebed4934cb03f227e9ad685a4be78fdeb55163",
+      "width": 640,
+      "height": 360,
+      "duration_ms": 6000
+    },
+    {
+      "path": "animation/scalinghuman-connection-640x360.mp4",
+      "bytes": 61160,
+      "sha256": "e74bd8f931b1b794f086ef66502ca2524ce57c218db2c5a7852631a0252a74cb"
+    },
+    {
+      "path": "animation/scalinghuman-connection-854x480.gif",
+      "bytes": 898861,
+      "sha256": "9570e71384128fdb97c4caf2432e2f9a45d3acf5318e2e40b595ece5f19b1487",
+      "width": 854,
+      "height": 480,
+      "duration_ms": 6000
+    },
+    {
+      "path": "animation/scalinghuman-connection-854x480.mp4",
+      "bytes": 83960,
+      "sha256": "ffd759c85de1d6e01e8fa7c4d09e69ab8b9bc2b8668e4e54ad9764b83579f8ac"
+    },
+    {
+      "path": "animation/scalinghuman-poster-320x180.png",
+      "bytes": 5622,
+      "sha256": "755d4c23d04c19effa99a5202e84eb4dddc91a216e34207d1d926ae78ff5ce85",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "path": "animation/scalinghuman-poster-640x360.png",
+      "bytes": 13967,
+      "sha256": "ec219976c30544b1b3b22ace7295866db111315e058c238147c4d834eaeefb81",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "path": "animation/scalinghuman-poster-854x480.png",
+      "bytes": 12055,
+      "sha256": "4adc296ac66311354d6496a10cbea41f8306d13fd2a19b3cf51a66b03840c406",
+      "width": 854,
+      "height": 480
+    },
+    {
+      "path": "logo/scalinghuman-logo-1024.png",
+      "bytes": 51022,
+      "sha256": "575fae213885520b8f5e467f06afd82eb1d930400fffc9b8099f9a11afdd0f54",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "logo/scalinghuman-logo-128.png",
+      "bytes": 3737,
+      "sha256": "6158c7a9fe57ad8346c3bdb93d0fbb4613ceda40e9740615f63400e448206bf2",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "logo/scalinghuman-logo-2048.png",
+      "bytes": 102689,
+      "sha256": "45180c82cb7019521bdeae6119ecf503cd6e1a094ca32e22b4df3942caadb99d",
+      "width": 2048,
+      "height": 2048
+    },
+    {
+      "path": "logo/scalinghuman-logo-256.png",
+      "bytes": 8514,
+      "sha256": "dbd0140b9217f639b96423f987bc808f16fab2921d358092b9449baba69aab13",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "logo/scalinghuman-logo-32.png",
+      "bytes": 770,
+      "sha256": "4d08bd2b5fdfd7823ee1ef6a58f650d84848874544d507b158f99667c60d0756",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "path": "logo/scalinghuman-logo-512.png",
+      "bytes": 19728,
+      "sha256": "40696ebffa2fe2f3257a579e9d485d7b1982f9921e9a5712a6bf3188743c7403",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "logo/scalinghuman-logo-64.png",
+      "bytes": 1695,
+      "sha256": "c65e594fee310d18f1ad7edfa586f72d7b0d77f1ea1025028ddde7f9d290d866",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "logo/scalinghuman-logo-current-512.png",
+      "bytes": 16762,
+      "sha256": "a7b9524a02324cb4fec110259a5bd4f79b670d98ddadb04cc34d36aae3f72c45",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "logo/scalinghuman-logo-transparent-1024.png",
+      "bytes": 59133,
+      "sha256": "27f13605da178051a31e2f78b2c0f1bbb8e67fb54cb0b299a9e85f4554fdfebf",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "logo/scalinghuman-logo-transparent-128.png",
+      "bytes": 4443,
+      "sha256": "f0722bf60341ae8486fcb09d382fe085b2d8419ca3d8180dc42b555575776e77",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "logo/scalinghuman-logo-transparent-2048.png",
+      "bytes": 120243,
+      "sha256": "b63c78b8b1fe0822555393621360650bd93e77d49d9ad37fbf98ee10b248b94a",
+      "width": 2048,
+      "height": 2048
+    },
+    {
+      "path": "logo/scalinghuman-logo-transparent-256.png",
+      "bytes": 9915,
+      "sha256": "a25f7af672e5942185a07b5b8cb8b6c521c1a3fd4edf92c41465dfcd9190b1a4",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "logo/scalinghuman-logo-transparent-32.png",
+      "bytes": 977,
+      "sha256": "927252769e7ad8028100dbdabb394d12831db5891dbfb701cdcb77681cbc769d",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "path": "logo/scalinghuman-logo-transparent-512.png",
+      "bytes": 22654,
+      "sha256": "4b33dd1339aebf45ff5f58bc0c6fbfb3a3ef89a55856d714da75091909994a27",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "logo/scalinghuman-logo-transparent-64.png",
+      "bytes": 2028,
+      "sha256": "9fc40d4ef4437dd8f0380060e95bda8d973d7662a80c8e155a0a8131932835cb",
+      "width": 64,
+      "height": 64
+    }
+  ]
+}

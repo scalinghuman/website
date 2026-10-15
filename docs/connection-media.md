@@ -15,13 +15,14 @@ reference: https://x.com/NSJunXiu/status/2108756692741865746
 Assets: scalinghuman-connection.mp4, scalinghuman-connection.gif and
 scalinghuman-connection-poster.png under public/assets/connection. The MP4 is
 854 by 480 at 15 fps. Playback is user initiated, with native controls and no
-external video player. A looping GIF is available to download and reuse.
+external video player. Reusable GIFs are stored in the GitHub repository resources, without a homepage
+download link.
 
 The previously published apple-intention-42-46.mp4/GIF and connection-poster.png
 paths remain as legacy aliases containing the new original assets, so existing
 links continue working. The copied film excerpt is no longer served there.
 
-The header and favicon use the new black/silver two-node mark. The neural face
+The header, favicon and GitHub organization avatar use the black/silver two-node mark. The neural face
 hero remains unchanged. Generic dot-and-line marks already exist, so this
 identity does not claim that the underlying geometric motif is unique.
 
@@ -30,3 +31,6 @@ FFmpeg. Run `python3 scripts/build-connection-animation.py /path/to/ffmpeg
 /output/folder /path/to/font.ttf`, then copy selected outputs into the paths
 above, including legacy aliases. The separate generated polished-material study
 is a reference, not the served logo.
+
+Multiple logo resolutions and animation formats are maintained in
+[resources/branding/scaling-human](../resources/branding/scaling-human/README.md).
