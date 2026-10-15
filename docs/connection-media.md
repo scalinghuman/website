@@ -1,19 +1,32 @@
-# Connection reference clip
+# Scaling Human connection identity
 
-Added October 14, 2026 at the maintainer's request.
+Updated October 14, 2026 at the maintainer's request.
 
-Source: https://x.com/NSJunXiu/status/2108756692741865746
-The post identifies the film as Apple's Intention (2013).
+The homepage animation and logo are original procedural artwork. Shiny black
+nodes represent carbon-based human intelligence. Shiny silver nodes represent
+silicon-based machine intelligence. Twelve nodes form a network before resolving
+into the two-node, one-line logo. This is a visual metaphor, not an atomic model.
 
-Assets retain the 42.000 to 46.000 second sequence, without audio. The MP4
-is 854 by 480, the looping GIF is 640 by 360 at 15 fps. The poster is a
-frame near 46 seconds. The page credits the source and distinguishes our
-carbon/silicon interpretation from the original film's words and intent.
-No ownership, license grant or Apple endorsement is claimed. These reference
-assets are third-party material, not part of an original Scaling Human logo.
+The six-second animation uses original copy: Human insight + machine capability;
+Intelligence, together.; Scaling Human. It contains no frames, words or audio
+from Apple's Intention film. The film's two-dot connection scene was a conceptual
+reference: https://x.com/NSJunXiu/status/2108756692741865746
 
-The homepage uses a local MP4 with native playback controls and no autoplay,
-plus a GIF download. It does not embed an external video player. The original
-site logo, favicon and GitHub avatar are unchanged. A simple C/Si logo draft
-remains outside the published repository because similar generic dot-and-line
-marks already exist and the maintainer conditioned adoption on that check.
+Assets: scalinghuman-connection.mp4, scalinghuman-connection.gif and
+scalinghuman-connection-poster.png under public/assets/connection. The MP4 is
+854 by 480 at 15 fps. Playback is user initiated, with native controls and no
+external video player. A looping GIF is available to download and reuse.
+
+The previously published apple-intention-42-46.mp4/GIF and connection-poster.png
+paths remain as legacy aliases containing the new original assets, so existing
+links continue working. The copied film excerpt is no longer served there.
+
+The header and favicon use the new black/silver two-node mark. The neural face
+hero remains unchanged. Generic dot-and-line marks already exist, so this
+identity does not claim that the underlying geometric motif is unique.
+
+Reproduction source: scripts/build-connection-animation.py. Requires Pillow and
+FFmpeg. Run `python3 scripts/build-connection-animation.py /path/to/ffmpeg
+/output/folder /path/to/font.ttf`, then copy selected outputs into the paths
+above, including legacy aliases. The separate generated polished-material study
+is a reference, not the served logo.
