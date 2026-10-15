@@ -87,6 +87,30 @@ const groups = [
     </p>
   </section>
 
+  <section class="section container connection" id="connection" aria-labelledby="connection-heading">
+    <div class="section__header">
+      <h2 id="connection-heading">Carbon and silicon, connected</h2>
+      <p>Human experience and artificial intelligence can contribute different strengths.
+        These experiments explore what becomes possible when we connect them.</p>
+    </div>
+    <figure class="connection__figure">
+      <video controls muted playsinline loop preload="none" width="854" height="480"
+        poster="/assets/connection/connection-poster.png"
+        aria-label="Four-second abstract animation: dots converge, overlap and connect with a straight line"
+        aria-describedby="connection-caption">
+        <source src="/assets/connection/apple-intention-42-46.mp4" type="video/mp4" />
+        <a href="/assets/connection/apple-intention-42-46.gif">View the four-second GIF</a>
+      </video>
+      <figcaption id="connection-caption">
+        A visual reference: 0:42 to 0:46 of Apple’s <cite>Intention</cite> (2013),
+        shared in <a href="https://x.com/NSJunXiu/status/2108756692741865746">Jun’s post</a>.
+        The sequence reads “surprise,” “love,” and “connection.” The carbon and silicon
+        interpretation is ours.
+        <a href="/assets/connection/apple-intention-42-46.gif" download>Download the GIF</a>.
+      </figcaption>
+    </figure>
+  </section>
+
   <section class="section container" aria-labelledby="collection-heading">
     <div class="section__header">
       <h2 id="collection-heading">Around the collection</h2>
@@ -101,3 +125,9 @@ const groups = [
 
   {/* Products section reserved until work authorization / intentional launch. */}
 </BaseLayout>
+
+<style>
+  .connection__figure { max-width: 42rem; margin: 1.5rem 0 0; }
+  .connection__figure video { display: block; width: 100%; height: auto; border-radius: 1rem; background: #d2d2d2; }
+  .connection__figure figcaption { margin-top: 1rem; font-size: 0.875rem; line-height: 1.65; color: var(--text-secondary, inherit); }
+</style>
