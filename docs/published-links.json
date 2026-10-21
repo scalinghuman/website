@@ -6,6 +6,7 @@
     "/apps/book-cricket/support.html",
     "/apps/foodscanner.html",
     "/apps/glasshole.html",
+    "/apps/human-signals.html",
     "/apps/qwen38-27b-eval.html",
     "/apps/ring-local.html",
     "/apps/rt-library.html",
@@ -25,6 +26,7 @@
     "/apps/book-cricket/support",
     "/apps/foodscanner",
     "/apps/glasshole",
+    "/apps/human-signals",
     "/apps/qwen38-27b-eval",
     "/apps/ring-local",
     "/apps/rt-library",
@@ -136,6 +138,14 @@
     ],
     "/apps/rt-library/privacy.html": [
       "main-content"
+    ],
+    "/apps/human-signals.html": [
+      "main-content",
+      "status",
+      "sources",
+      "views",
+      "privacy",
+      "rights"
     ]
   },
   "downloads": [

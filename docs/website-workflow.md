@@ -85,8 +85,9 @@ public URLs and visual evidence in the handoff. Report any failed checks honestl
 
 Avoid em dashes. Prefer periods, commas, colons, parentheses or a rewrite.
 Maintain personal, noncommercial framing and accurate project status. Keep
-Smart Ring Local and Smart Strap Local pages independent, with their own rights
-contact sections. Preserve HTML-aware whitespace handling (`compressHTML: true`)
+the preserved ring-local and strap-local device-note URLs and their vendor-specific
+rights sections. Both now link to the combined Human Signals app; keep its shared
+catalog, privacy and device capability claims consistent. Preserve HTML-aware whitespace handling (`compressHTML: true`)
 and use shared prose styles for long URLs and code blocks.
 
 The automation protects tested text and URL invariants. It cannot infer every

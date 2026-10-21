@@ -135,6 +135,22 @@ export const experiments: Experiment[] = [
     iconAlt: "Book Cricket: cricket ball, stumps and a book",
   },
   {
+    slug: "human-signals",
+    availability: "development",
+    briefUrl: `${collection.github}/blob/main/docs/projects/human-signals.md`,
+    title: "Human Signals",
+    kicker: "iPhone · Personal use · In development",
+    description: "One local companion for a ring, wearable and available Apple Health sources. Explore source-aware trends and meeting-linked physiological responses, with a dedicated Devices view.",
+    href: "/apps/human-signals",
+    cta: "Scope, sources & status",
+    icon: "/assets/apps/human-signals/icon-256.png",
+    iconAlt: "Human Signals: a cyan ring and gold wearable loop sharing one signal",
+  },
+];
+
+/** Preserved device-note pages. Continued together in Human Signals. */
+export const legacyExperiments: Experiment[] = [
+  {
     slug: "ring-local",
     availability: "development",
     briefUrl: `${collection.github}/blob/main/docs/projects/ring-local.md`,
@@ -158,7 +174,7 @@ export const experiments: Experiment[] = [
 
 /** Lookup by page path segment for app detail pages */
 export const appsBySlug: Record<string, Experiment> = Object.fromEntries(
-  experiments.map((project) => [project.slug, project]),
+  [...experiments, ...legacyExperiments].map((project) => [project.slug, project]),
 );
 
 /** Official Apple badge (marketing guidelines asset). */

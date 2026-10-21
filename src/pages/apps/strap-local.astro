@@ -3,18 +3,19 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProjectNavigation from "../../components/ProjectNavigation.astro";
 import { appsBySlug, person } from "../../data/site";
 ---
-<BaseLayout title="Smart Strap Local" description="Personal WHOOP 5.0 companion project: planned direct Bluetooth to iPhone and local storage. App development and hardware validation pending." path="/apps/strap-local">
+<BaseLayout title="Smart Strap Local" description="Personal WHOOP 5.0 companion project: planned direct Bluetooth to iPhone and local storage. Device notes for the combined Human Signals app." path="/apps/strap-local">
   <article class="container prose">
     <header class="page-header">
       <p class="page-header__kicker">iPhone · Personal, noncommercial use · In development</p>
       <h1 class="page-header__title">Smart Strap Local</h1>
+      <p><strong>Continued in Human Signals.</strong> <a href="/apps/human-signals">See the combined app and device status</a>.</p>
       <p class="page-header__lead">A personal iPhone companion for your WHOOP 5.0. The plan: connect directly over Bluetooth and keep your measurements on your phone.</p>
       <div class="page-header__actions"><a href={appsBySlug["strap-local"].briefUrl}>Project notes ↗</a></div>
     </header>
 
     <aside class="project-status">
-      <strong>Project setup · hardware validation pending</strong>
-      <p>No app download or verified device connection is available yet. The next milestone is proving pairing and data access on the owner's strap.</p>
+      <strong>Device notes · continued in Human Signals</strong>
+      <p>Direct live heart rate, local recording and optional Health delivery are verified in the earlier personal app. The combined build still needs physical-device validation. No public app download is offered.</p>
     </aside>
     <dl class="project-facts" aria-label="Project at a glance">
       <div><dt>Hardware</dt><dd>WHOOP 5.0</dd></div>
@@ -53,7 +54,7 @@ import { appsBySlug, person } from "../../data/site";
     </details>
 
     <h2 id="privacy">Privacy and intended use</h2>
-    <p>A personal, noncommercial experiment with owned hardware. No sale, public app release or hosted health-data service is planned. Local storage, protected authentication keys and a delete-data control are requirements awaiting implementation.</p>
+    <p>A personal, noncommercial experiment with owned hardware. No sale, public app release or hosted health-data service is planned. Development now continues in Human Signals. Its device status and privacy section describe implemented storage controls and remaining device-specific validation work.</p>
 
     <h2>Independence and responsibility</h2>
     <p>Independent and unofficial. Not affiliated with, endorsed by, sponsored by or supported by WHOOP, Inc. The hardware name identifies intended compatibility; its owner retains the trademark.</p>

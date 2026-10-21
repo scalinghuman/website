@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectNavigation from "../../components/ProjectNavigation.astro";
+import { appsBySlug, person } from "../../data/site";
+---
+<BaseLayout title="Human Signals" description="A personal iPhone app for wearable, ring and available Health sources: local collection, separate provenance, meaningful trends and meeting-linked response patterns." path="/apps/human-signals">
+  <article class="container prose">
+    <header class="page-header">
+      <p class="page-header__kicker">iPhone · Personal, noncommercial experiment · In development</p>
+      <div class="identity"><img src="/assets/apps/human-signals/icon-256.png" width="96" height="96" alt="Cyan ring and gold wearable loop sharing one signal" /><h1 class="page-header__title">Human Signals</h1></div>
+      <p class="page-header__lead">One place for signals from a ring, wearable and available Apple Health sources. Understand patterns in your day while keeping each source and its limits visible.</p>
+      <div class="page-header__actions"><a href={appsBySlug["human-signals"].briefUrl}>Project notes ↗</a><a href="#status">Device status</a></div>
+    </header>
+    <aside class="project-status" id="status">
+      <strong>Combined personal build · physical validation in progress</strong>
+      <p>The combined app builds for iPhone and has shared health views, Meetings and a dedicated Devices tab. Earlier wearable builds have verified live HR, local recording and optional Health delivery. Ring 4 sensor access remains unfinished. No public app download or commercial service is offered.</p>
+    </aside>
+    <dl class="project-facts" aria-label="Project at a glance">
+      <div><dt>Connections</dt><dd>Direct Bluetooth and optional on-device Health access</dd></div>
+      <div><dt>Storage</dt><dd>Protected local database, user-controlled device backup</dd></div>
+      <div><dt>Scope</dt><dd>Personal use with owned devices</dd></div>
+    </dl>
+    <ProjectNavigation links={[
+      { label: "Sources", href: "#sources" }, { label: "App views", href: "#views" },
+      { label: "Privacy", href: "#privacy" }, { label: "Rights concerns", href: "#rights" },
+    ]} />
+    <h2 id="sources">Different sources, one workspace</h2>
+    <div class="sources">
+      <section><h3>Wearable</h3><p>WHOOP 5.0 connects over Bluetooth. Live heart rate, local recording and optional HR delivery to Apple Health were verified in the earlier personal app. History catch-up, overnight accuracy, background reliability and battery cost remain physical test gates.</p><a href="/apps/strap-local">Preserved wearable device notes</a></section>
+      <section><h3>Ring</h3><p>Oura Ring 4 discovery and service inspection were verified while preserving the existing pairing. The combined adapter carries that capability forward. Authentication and direct ring sensor/history access remain unfinished, so the app does not claim live ring measurements.</p><a href="/apps/ring-local">Preserved ring device notes</a></section>
+      <section><h3>Apple Health</h3><p>With permission, view readable records already saved by authorized apps or devices. Health-sourced ring records retain that origin and are not presented as a direct ring connection. Availability, freshness and sampling differ by source.</p></section>
+    </div>
+    <p>More sources can add context, but they do not automatically make an estimate more accurate. The app selects or displays sources separately. Direct WHOOP RMSSD and Health SDNN keep different labels and baselines; overlapping records are not treated as independent confirmation.</p>
+    <h2 id="views">Built around useful views</h2>
+    <ul>
+      <li><strong>Today:</strong> choose a readable heart-rate source, check its timestamp and review available overnight information with clear provenance.</li>
+      <li><strong>Trends:</strong> explore direct wearable measurements, Health sources or the owner's one-time WHOOP historical reference separately.</li>
+      <li><strong>Meetings:</strong> read selected iPhone calendars and compare meeting-linked HR responses with earlier non-meeting recordings from the same source at similar hours. The default flag is +2 reference standard deviations, with an adjustable threshold.</li>
+      <li><strong>Devices:</strong> connect and inspect the wearable and ring, manage Health access, and see what each adapter can actually provide.</li>
+      <li><strong>Settings:</strong> optional HR personalization, recording controls, backup preference, imports, diagnostics and deletion.</li>
+    </ul>
+    <div class="app-previews">
+      <figure><img src="/assets/apps/human-signals/devices-synthetic.png" width="1206" height="2622" loading="lazy" alt="Human Signals Devices tab listing a wearable, ring inspection and a synthetic Health source" /><figcaption>Devices view. Synthetic preview with no personal health records.</figcaption></figure>
+      <figure><img src="/assets/apps/human-signals/health-trends-synthetic.png" width="1206" height="2622" loading="lazy" alt="Human Signals Health trends showing illustrative resting heart rate from a synthetic ring source" /><figcaption>Health source trends. All values are synthetic, not measurements or evidence of direct ring access.</figcaption></figure>
+    </div>
+    <h3>Meeting patterns with context</h3>
+    <p>Inspect before/during/after heart rate, recurring meetings and manually assigned meeting types. Add a felt-stress rating and note a change actually tried, such as a clearer agenda or a meeting buffer. Comparisons describe associations, not proof that a meeting caused stress or that a change reduced it.</p>
+    <p>Flags use an experimental physiological response proxy, not a validated psychological-stress score. Sparse recordings, overlapping events, known exercise/sleep or an insufficient baseline leave a meeting unscored. Missing movement information does not prove stillness. HRV and sleep are separate context, not ingredients in an invented combined score.</p>
+    <h2 id="privacy">Private, local and explicit</h2>
+    <p>There is no hosted health-data service, in-app analytics, mandatory vendor account or cloud relay in the app. Ongoing wearable collection stays direct Bluetooth. Optional calendar and Health reading requires iPhone permission. Calendar events are never changed.</p>
+    <p>Measurements and user reviews stay in the protected local app database. Event titles and computed calendar results stay in memory. Saved meeting reviews contain hashed event references, a type, your rating and a tried change. The app does not copy attendees, event notes, locations or conferencing links into review records.</p>
+    <p>Database inclusion in device backups is user controlled. If enabled, your iPhone's backup configuration determines whether that database is backed up. Deleting app data does not delete original Calendar or Apple Health records. Health reading and optional live wearable HR delivery to Health are separate controls.</p>
+    <p><a href="/privacy.html#human-signals">Privacy details</a> · <a href="/support.html">Project support</a>. Website analytics applies to this site only and receives no app health or calendar data.</p>
+    <h2>Independence and responsibility</h2>
+    <p>An independent personal experiment. Not affiliated with, sponsored by, endorsed by or supported by Oura Health Oy or WHOOP, Inc. Device names identify intended compatibility only. Vendor artwork, proprietary models and firmware are not included in public resources.</p>
+    <p>Experimental wellness information, not a medical device. Provided as-is without warranties or guarantees of accuracy, availability or compatibility, to the extent permitted by applicable law. Personal use and these notices do not override applicable law, agreements or third-party licenses.</p>
+    <h2 id="rights">Rights concerns and takedown requests</h2>
+    <p>The project owner intends to honor requests from affected rights holders by disabling or removing identified public material while reviewing the concern. Include the affected URL, the right asserted and your authority to act. No automated response-time guarantee is made.</p>
+    <p><a href={`mailto:${person.email}?subject=Human%20Signals%20rights%20concern`}>Contact about Human Signals</a>. Do not include health records, authentication keys or private calendar content.</p>
+    <div class="links-row"><a href={appsBySlug["human-signals"].briefUrl}>Project notes</a><a href="/#projects">All projects</a></div>
+  </article>
+</BaseLayout>
+<style>
+  .identity { display: flex; align-items: center; gap: 1.25rem; margin: 1rem 0; }
+  .identity img { flex: 0 0 auto; border-radius: 22%; }
+  .identity h1 { margin: 0; min-width: 0; }
+  .app-previews { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+  .app-previews figure { margin: 0; min-width: 0; }
+  .app-previews img { width: 100%; max-width: 300px; height: auto; border-radius: 20px; border: 1px solid var(--border); }
+  .app-previews figcaption { font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.75rem; }
+  @media (max-width: 560px) { .app-previews { grid-template-columns: 1fr; } }
+  .sources { display: grid; gap: 1rem; }
+  .sources section { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.25rem; background: var(--bg-elevated); min-width: 0; }
+  .sources h3 { margin-top: 0; }
+  @media (min-width: 900px) { .sources { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 480px) { .identity { align-items: flex-start; gap: 0.9rem; } .identity img { width: 64px; height: 64px; } .identity h1 { font-size: 2.25rem; } }
+</style>
