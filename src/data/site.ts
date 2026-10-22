@@ -45,6 +45,8 @@ export type Experiment = {
   /** App icon path under /public */
   icon?: string;
   iconAlt?: string;
+  /** Optional app screenshots on the project card. */
+  previewImages?: { src: string; alt: string; width: number; height: number }[];
 };
 
 /** Featured personal projects and community contributions. Future products remain separate. */
@@ -123,16 +125,22 @@ export const experiments: Experiment[] = [
   },
   {
     slug: "book-cricket",
-    availability: "development",
+    availability: "available",
     briefUrl: `${collection.github}/blob/main/docs/projects/book-cricket.md`,
     title: "Book Cricket",
-    kicker: "iPhone Duo · iPhone · Coming soon",
+    kicker: "iPhone Duo · iPhone · Free",
     description:
-      "The classroom was the stadium. A nostalgic page-flip cricket game with solo, same-phone and nearby matches, plus 1,000 Cricket Facts by S Ballani. Free at launch.",
+      "The classroom was the stadium. A nostalgic page-flip cricket game with solo, same-phone and nearby matches, plus 1,000 Cricket Facts by S Ballani. Free on the App Store.",
     href: "/apps/book-cricket",
     cta: "Screenshots & walkthrough",
+    appStoreUrl: "https://apps.apple.com/app/book-cricket-90s-nostalgia/id6819972964",
+    appStoreLabel: "App Store",
     icon: "/assets/apps/book-cricket/icon.png",
     iconAlt: "Book Cricket: cricket ball, stumps and a book",
+    previewImages: [
+      { src: "/assets/apps/book-cricket/closed-book.png", alt: "Book Cricket closed cover with the match scorecard", width: 1398, height: 2034 },
+      { src: "/assets/apps/book-cricket/six.png", alt: "Book Cricket six-run replay above an open cricket facts book", width: 1398, height: 2034 },
+    ],
   },
   {
     slug: "human-signals",

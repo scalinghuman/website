@@ -67,7 +67,10 @@
       "questions-title",
       "ritual-title",
       "walkthrough",
-      "walkthrough-title"
+      "walkthrough-title",
+      "current-release",
+      "release-title",
+      "download-title"
     ],
     "/support.html": [
       "foodscanner",
@@ -165,6 +168,7 @@
     "https://scalinghuman.github.io/experiments/assets/qwen38-27b-eval/qwen-local-mario-demo-poster.png",
     "https://scalinghuman.github.io/experiments/assets/qwen38-27b-eval/qwen-local-mario-demo.mp4",
     "https://scalinghuman.github.io/experiments/assets/qwen38-27b-eval/super-mario-web-source.zip",
-    "https://apps.apple.com/us/app/rt-library/id6789365604"
+    "https://apps.apple.com/us/app/rt-library/id6789365604",
+    "https://apps.apple.com/app/book-cricket-90s-nostalgia/id6819972964"
   ]
 }

@@ -13,6 +13,7 @@ interface Props {
   appStoreLabel?: string;
   icon?: string;
   iconAlt?: string;
+  previewImages?: { src: string; alt: string; width: number; height: number }[];
 }
 
 const {
@@ -26,6 +27,7 @@ const {
   headingLevel = 3,
   icon,
   iconAlt = "",
+  previewImages = [],
 } = Astro.props;
 const Heading = headingLevel === 4 ? "h4" : "h3";
 ---
@@ -52,6 +54,11 @@ const Heading = headingLevel === 4 ? "h4" : "h3";
     </div>
   </div>
   <p class="card__body">{description}</p>
+  {previewImages.length > 0 && (
+    <a class="card__screenshots" href={href} aria-label={`${title}: view screenshots and gameplay details`}>
+      {previewImages.map((image) => <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />)}
+    </a>
+  )}
   <div class="card__actions">
     {
       appStoreUrl && (
@@ -76,3 +83,9 @@ const Heading = headingLevel === 4 ? "h4" : "h3";
     {briefUrl && <a class="card__notes" href={briefUrl}>Project notes ↗</a>}
   </div>
 </article>
+
+<style>
+  .card__screenshots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 4px 0 24px; padding: 12px; background: #f6f0dd; border: 1px solid var(--border); border-radius: 14px; }
+  .card__screenshots img { display: block; width: 100%; height: auto; border-radius: 8px; }
+  .card__screenshots:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+</style>

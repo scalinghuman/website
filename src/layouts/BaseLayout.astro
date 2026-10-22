@@ -9,16 +9,21 @@ interface Props {
   description?: string;
   /** Path for canonical URL, e.g. /privacy.html */
   path?: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 const {
   title,
   description = "Personal, noncommercial hardware and AI experiments under the Scaling Human name, exploring human perception, memory, judgment, and capability.",
   path = Astro.url.pathname,
+  image,
+  imageAlt,
 } = Astro.props;
 
 const site = Astro.site ?? new URL("https://scalinghuman.ai");
 const canonical = new URL(path, site).href;
+const socialImage = image ? new URL(image, site).href : undefined;
 const pageTitle =
   title === "Scaling Human" ? "Scaling Human" : `${title} · Scaling Human`;
 ---
@@ -36,7 +41,11 @@ const pageTitle =
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Scaling Human" />
-    <meta name="twitter:card" content="summary" />
+    {socialImage && <meta property="og:image" content={socialImage} />}
+    {socialImage && imageAlt && <meta property="og:image:alt" content={imageAlt} />}
+    <meta name="twitter:card" content={socialImage ? "summary_large_image" : "summary"} />
+    {socialImage && <meta name="twitter:image" content={socialImage} />}
+    {socialImage && imageAlt && <meta name="twitter:image:alt" content={imageAlt} />}
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <link rel="icon" type="image/png" href="/assets/logos/scalinghuman-connection-favicon.png" />

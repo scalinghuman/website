@@ -1,8 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-// Public prelaunch page. Add the approved listing URL after App Review.
-const appStoreUrl: string | null = null;
-const nearbyReady = true; // Physical nearby multiplayer confirmed by the user on 7 October 2026.
+import ProjectNavigation from "../../components/ProjectNavigation.astro";
+import { appStoreBadge, appsBySlug } from "../../data/site";
+const app = appsBySlug["book-cricket"];
+const appStoreUrl = app.appStoreUrl;
 const media = "/assets/apps/book-cricket";
 const gallery = [
   { file: "shelf.png", title: "Pick your book", text: "Six offline editions, led by 1,000 Cricket Facts by S Ballani.", alt: "Book Cricket shelf with six books and single-player and multiplayer choices" },
@@ -24,18 +25,18 @@ const chapters = [
   { time: 40, stamp: "0:40", label: "Explore facts" },
 ];
 ---
-<BaseLayout title="Book Cricket" description="The classroom was the stadium. Play nostalgic book cricket on iPhone Duo or a supported iPhone, and learn from 1,000 Cricket Facts by S Ballani." path="/apps/book-cricket">
+<BaseLayout title="Book Cricket" description="Free book cricket for iPhone Duo and iPhone. Play solo, pass one phone or challenge a nearby friend. Includes 1,000 Cricket Facts by S Ballani and six offline books." path="/apps/book-cricket" image={`${media}/nostalgia-artwork.png`} imageAlt="Book Cricket: a stitched red cricket ball and an open book, page 26 with its final digit circled">
   <article class="container book-cricket-page">
     <div class="intro-grid">
     <header class="page-header">
       <div class="page-header__brand">
         <img class="page-header__icon" src={`${media}/icon.png`} width="88" height="88" alt="Book Cricket: red cricket ball, stumps and an open book in an India-inspired palette" />
-        <div><p class="page-header__kicker">iPhone Duo · iPhone · Free at launch</p><h1 class="page-header__title">Book Cricket</h1></div>
+        <div><p class="page-header__kicker">iPhone Duo · iPhone · Free</p><h1 class="page-header__title">Book Cricket</h1></div>
       </div>
       <p class="nostalgia">The classroom was the stadium.</p>
       <p class="page-header__lead">A book. A page number. A whole cricket match before the bell. Bring the Indian schoolyard game of the 90s to your phone, with a little learning between every ball.</p>
       <div class="page-header__actions actions">
-        {appStoreUrl ? <a class="btn btn--primary" href={appStoreUrl} rel="noopener noreferrer">Download free on the App Store</a> : <span class="launch-note">Coming soon on the App Store</span>}
+        <a class="store-badge-link" href={appStoreUrl} rel="noopener noreferrer" aria-label={`Book Cricket: ${appStoreBadge.alt}`}><img src={appStoreBadge.src} width={appStoreBadge.width} height={appStoreBadge.height} alt={appStoreBadge.alt} /></a>
         <a class="btn btn--secondary" href="#walkthrough">Watch the walkthrough ↓</a>
       </div>
     </header>
@@ -46,6 +47,22 @@ const chapters = [
     </figure>
 
     </div>
+
+    <ProjectNavigation links={[
+      { label: "Get the app", href: "#current-release" },
+      { label: "Walkthrough", href: "#walkthrough" },
+      { label: "Ways to play", href: "#modes-title" },
+      { label: "Screenshots", href: "#gallery-title" },
+      { label: "Books", href: "#books-title" },
+      { label: "Questions", href: "#questions-title" },
+      { label: "Support", href: "/apps/book-cricket/support" },
+    ]} />
+
+    <section id="current-release" class="release-summary" aria-labelledby="release-title">
+      <h2 id="release-title" class="sr-only">Book Cricket on the App Store</h2>
+      <dl class="release-facts"><div><dt>Price</dt><dd>Free</dd></div><div><dt>Compatibility</dt><dd>iOS 17 or later</dd></div><div><dt>Match</dt><dd>5 overs · 5 wickets</dd></div><div><dt>Shelf</dt><dd>6 offline books</dd></div></dl>
+      <p>Solo vs computer, pass-and-play and nearby multiplayer. No account, ads or in-app purchases.</p>
+    </section>
 
     <section class="ritual" aria-labelledby="ritual-title">
       <div><p class="eyebrow">One familiar ritual</p><h2 id="ritual-title">The fold is the spine.</h2></div>
@@ -75,19 +92,19 @@ const chapters = [
       <div class="mode-grid">
         <div class="mode-card"><span>01</span><h3>You vs computer</h3><p>Bat first or field first. The computer plays its innings, then you chase or defend.</p></div>
         <div class="mode-card"><span>02</span><h3>One phone, two players</h3><p>Pass the book between friends. One shared screen keeps the match and target in view.</p></div>
-        <div class="mode-card"><span>03</span><h3>Nearby phones</h3><p>{nearbyReady ? "One hosts, the other joins and accepts the match. Play directly between nearby iPhones without an account or hosted match server. Allow local-network access on both phones and keep the app open." : "Direct play between nearby iPhones is being checked for launch. Solo and same-phone matches work offline."}</p></div>
+        <div class="mode-card"><span>03</span><h3>Nearby phones</h3><p>One hosts, the other joins and accepts the match. Play directly between nearby iPhones without an account or hosted match server. Allow local-network access on both phones and keep the app open.</p></div>
       </div>
       <p class="quiet-note">No accounts, ads or in-app purchases. Hosted online multiplayer is a future feature.</p>
     </section>
 
     <section class="section-block" aria-labelledby="previews-title">
       <p class="eyebrow">A ball, a replay, a little reading</p><h2 id="previews-title">See the book come alive.</h2>
-      <p>Two 28-second previews recorded in the app: open the book, hit a six, lose a wicket and explore the facts shelf.</p>
+      <p>Watch the 18-second iPhone preview for runs and wickets, or see the book on iPhone Duo. Captured from the app in the iPhone and Duo simulators.</p>
       <div class="device-previews">
         {[
-          { device: "duo", title: "On iPhone Duo", text: "Your fold becomes the book’s spine." },
-          { device: "iphone", title: "On your iPhone", text: "Tap to close and open the book. The scorecard stays put." },
-        ].map((preview) => <figure><h3>{preview.title}</h3><video controls playsinline preload="none" poster={`${media}/${preview.device}-preview-poster.png`} width="886" height="1920" aria-label={`${preview.title}: Book Cricket gameplay preview`}><source src={`${media}/${preview.device}-preview.mp4`} type="video/mp4" /><track kind="captions" src={`${media}/gameplay-preview.vtt`} srclang="en" label="English instructions" default /><p><a href={`${media}/${preview.device}-preview.mp4`}>Download the gameplay preview</a>.</p></video><figcaption>{preview.text}</figcaption></figure>)}
+          { device: "duo", title: "On iPhone Duo", text: "Your fold becomes the book’s spine. A 28-second simulator demonstration.", captions: "gameplay-preview.vtt" },
+          { device: "iphone", title: "On your iPhone", text: "Tap to close and open the book. Runs and wickets play above the pages. An 18-second gameplay preview.", captions: "iphone-preview.vtt" },
+        ].map((preview) => <figure><h3>{preview.title}</h3><video controls playsinline preload="none" poster={`${media}/${preview.device}-preview-poster.png`} width="886" height="1920" aria-label={`${preview.title}: Book Cricket gameplay preview`}><source src={`${media}/${preview.device}-preview.mp4`} type="video/mp4" /><track kind="captions" src={`${media}/${preview.captions}`} srclang="en" label="English instructions" default /><p><a href={`${media}/${preview.device}-preview.mp4`}>Download the gameplay preview</a>.</p></video><figcaption>{preview.text}</figcaption></figure>)}
       </div>
     </section>
 
@@ -112,12 +129,17 @@ const chapters = [
 
     <section class="section-block questions" aria-labelledby="questions-title">
       <h2 id="questions-title">Before the next ball</h2>
+      <details><summary>Which devices can play?</summary><p>Book Cricket requires iOS 17 or later. iPhone Duo uses closing and opening as a move; traditional iPhones have a simulated book control. On iPad, the app runs in iPhone compatibility mode. App Store availability varies by country.</p></details>
       <details><summary>Why do I sometimes score from the right page?</summary><p>The default rule randomly selects either page, letting every digit from 0 through 9 occur. The highlighted digit shows which page counted. Choose Left page only before starting if you prefer even-page play.</p></details>
       <details><summary>Do 7, 8 and 9 really count as runs?</summary><p>Yes. Book Cricket uses the selected page’s final digit: 1–9 score their face value, and 0 is out. Left-page-only play offers 2, 4, 6 and 8. These are book-cricket rules; the replay celebrates each page result.</p></details>
       <details><summary>Can I play without the internet?</summary><p>Solo, same-phone matches and the bundled books work offline. Reference links and support email need an internet connection. Nearby play uses a direct local connection; hosted online matches are a future feature.</p></details>
       <details><summary>Where does my data go?</summary><p>The app has no analytics, advertising or accounts. Nearby matches share player names and match moves directly with the other phone. They are not sent to a developer-run server. Read the <a href="/apps/book-cricket/privacy">privacy policy</a> for details.</p></details>
     </section>
-    <div class="links-row"><a href="/apps/book-cricket/privacy">Privacy Policy</a><a href="/apps/book-cricket/support">Book Cricket Support</a><a href="/">Scaling Human</a></div>
+    <section class="download-panel section-block" aria-labelledby="download-title">
+      <div><p class="eyebrow">Your next innings</p><h2 id="download-title">Open a book. Start a match.</h2><p>Download Book Cricket for free on iPhone Duo or a supported iPhone. Version 1.0 includes all six books and three local match modes.</p></div>
+      <a class="store-badge-link" href={appStoreUrl} rel="noopener noreferrer" aria-label={`Book Cricket: ${appStoreBadge.alt}`}><img src={appStoreBadge.src} width={appStoreBadge.width} height={appStoreBadge.height} alt={appStoreBadge.alt} /></a>
+    </section>
+    <div class="links-row"><a href={app.briefUrl} rel="noopener noreferrer">Project notes</a><a href="/apps/book-cricket/privacy">Privacy Policy</a><a href="/apps/book-cricket/support">Book Cricket Support</a><a href="/">Scaling Human</a></div>
     <p class="quiet-note app-copyright">© 2026 ScalingHuman AI · Cricket facts by S Ballani.</p>
   </article>
 </BaseLayout>
@@ -140,7 +162,16 @@ const chapters = [
   .nostalgia { font-family: Georgia, serif; font-weight: 700; font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.08; color: var(--text); margin: 1.5rem 0 1rem; max-width: 800px; }
   .page-header__lead { font-size: 1.15rem; max-width: 730px; }
   .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
-  .launch-note { font-size: .95rem; font-weight: 600; color: var(--text-secondary); padding: .65rem 0; }
+  .book-cricket-page :global(.project-navigation) { margin-top: 28px; }
+  .release-summary { margin-top: 25px; padding: 24px; border: 1px solid var(--border-strong); border-radius: 16px; background: var(--bg-subtle); }
+  .release-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; margin: 0; }
+  .release-facts dt { font-size: .78rem; color: var(--text-secondary); margin-bottom: 5px; }
+  .release-facts dd { margin: 0; font-weight: 600; color: var(--text); }
+  .release-summary > p { margin: 18px 0 0; font-size: .92rem; }
+  .download-panel { display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+  .download-panel p { max-width: 650px; }
+  .download-panel .store-badge-link { flex: 0 0 auto; }
+  @media(max-width: 700px) { .release-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } .download-panel { align-items: flex-start; flex-direction: column; } }
   figure { margin: 0; }
   .hero-shot { background: var(--book-paper); border: 1px solid var(--border-strong); border-radius: 18px; overflow: hidden; }
   .hero-shot img { width: 100%; height: auto; }

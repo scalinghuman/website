@@ -1,9 +1,11 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { appsBySlug } from "../../../data/site";
 ---
 <BaseLayout title="Book Cricket Support" description="Help with Book Cricket scoring, iPhone Duo folding, simulated book controls, facts and nearby matches." path="/apps/book-cricket/support">
   <article class="container prose book-cricket-document">
     <header class="page-header"><p class="page-header__kicker">Book Cricket · Help</p><h1 class="page-header__title">Book Cricket Support</h1><p class="page-header__lead">A quick guide before the next ball.</p></header>
+    <p><a href={appsBySlug["book-cricket"].appStoreUrl} rel="noopener noreferrer">Get Book Cricket free on the App Store</a>. Requires iOS 17 or later.</p>
     <h2>Start a match</h2><ol><li>Pick a book on the home shelf.</li><li>Choose Single player vs computer, Multiplayer same phone, or Nearby phones.</li><li>Choose who bats first and the scoring-page rule. Either page is the default.</li><li>Start the match. On Duo, close then partially or fully open the phone. On a traditional iPhone, tap the simulated book control to close and open.</li></ol>
     <h2>Which page counts?</h2><p>The highlighted final digit identifies the scoring page. Either page selects the left or right page randomly: 1–9 are runs and 0 is out. Left page only uses even left pages: 2, 4, 6 and 8 are runs; 0 is out. This choice applies to both innings and the computer. In nearby play, the host chooses it and the guest sees it before accepting.</p>
     <h2>Opening did not add another ball</h2><p>Only the first opening after a close counts. Moving from partly open to fully open does not reroll the page. Close the book/phone before the next ball. At an innings break, continue to the chase before opening again.</p>
